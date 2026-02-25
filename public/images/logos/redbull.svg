@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" fill="none">
+  <text x="10" y="40" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" fill="#9ca3af">RedBull</text>
+  <!-- Bull silhouette hint -->
+  <path d="M145 22 Q150 15 155 20 L160 18 Q158 24 155 25 Q150 28 145 25 Z" fill="#9ca3af" opacity="0.7"/>
+  <path d="M160 22 Q165 15 170 20 L175 18 Q173 24 170 25 Q165 28 160 25 Z" fill="#9ca3af" opacity="0.7"/>
+</svg>
