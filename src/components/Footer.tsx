@@ -33,8 +33,9 @@ const Footer = () => {
       {/* Top gradient divider */}
       <div className="gradient-line" />
 
-      <div className="relative z-10 mx-auto container pt-14 pb-8">
-        <div className="flex gap-8 lg:gap-12 mb-14">
+      <div className="relative z-10 mx-auto container px-6 pt-14 pb-8">
+        {/* Top row: Logo on mobile stacks above, on desktop sits beside menu */}
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 mb-14">
           {/* Logo + vertical line */}
           <div className="flex items-start gap-8 lg:gap-12 flex-shrink-0">
             <Link href="/" className="flex items-center">
@@ -43,12 +44,15 @@ const Footer = () => {
                 alt="AccessIQ"
                 width={300}
                 height={70}
-                className="h-[60px] w-auto object-contain"
+                className="h-[48px] lg:h-[60px] w-auto object-contain"
               />
             </Link>
-            {/* Vertical divider */}
-            <div className="w-px self-stretch" style={{ background: "linear-gradient(180deg, transparent, rgba(0,212,170,0.4), rgba(0,136,204,0.4), transparent)" }} />
+            {/* Vertical divider - hidden on mobile */}
+            <div className="hidden lg:block w-px self-stretch" style={{ background: "linear-gradient(180deg, transparent, rgba(0,212,170,0.4), rgba(0,136,204,0.4), transparent)" }} />
           </div>
+
+          {/* Horizontal divider - visible only on mobile */}
+          <div className="lg:hidden h-px w-full" style={{ background: "linear-gradient(90deg, transparent, rgba(0,212,170,0.4), rgba(0,136,204,0.4), transparent)" }} />
 
           {/* Menu columns */}
           <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -59,7 +63,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {["Audit Services", "Compliance Standards", "Pricing", "View Demo"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-gray-500 text-sm hover:text-gray-300 transition-colors">{item}</Link>
+                  <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>
@@ -71,7 +75,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {["About us", "Contact us", "Support 24/5"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-gray-500 text-sm hover:text-gray-300 transition-colors">{item}</Link>
+                  <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>
@@ -83,7 +87,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {["Wcag checklist", "Privacy policy", "Terms of use"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-gray-500 text-sm hover:text-gray-300 transition-colors">{item}</Link>
+                  <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>
@@ -101,7 +105,7 @@ const Footer = () => {
                     <path d="M2 7l10 7 10-7" stroke="#0088cc" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
                 </div>
-                <span className="text-gray-400 text-sm">info@getaccessiqcom</span>
+                <span className="text-gray-300 text-sm">info@getaccessiqcom</span>
               </li>
               {/* Phone */}
               <li className="flex items-center gap-3">
@@ -110,7 +114,7 @@ const Footer = () => {
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#00d4aa" strokeWidth="1.5" />
                   </svg>
                 </div>
-                <span className="text-gray-400 text-sm">+1 833-232-2730</span>
+                <span className="text-gray-300 text-sm">+1 833-232-2730</span>
               </li>
               {/* Address */}
               <li className="flex items-start gap-3">
@@ -120,7 +124,7 @@ const Footer = () => {
                     <circle cx="12" cy="10" r="3" stroke="#00d4aa" strokeWidth="1.5" />
                   </svg>
                 </div>
-                <span className="text-gray-400 text-sm leading-relaxed">15257 Amberly Dr Ste 367<br />Tampa, FL 33647</span>
+                <span className="text-gray-300 text-sm leading-relaxed">15257 Amberly Dr Ste 367<br />Tampa, FL 33647</span>
               </li>
             </ul>
           </div>
@@ -132,11 +136,11 @@ const Footer = () => {
 
         {/* Bottom copyright row */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
-          <span className="text-gray-600 text-xs">&copy; 2024. GetAccessIQ.</span>
-          <span className="text-gray-600 text-xs">All rights reserved.</span>
-          <Link href="#" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">Terms of Use.</Link>
-          <Link href="#" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">Privacy Policy.</Link>
-          <Link href="#" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">Accessibility</Link>
+          <span className="text-gray-400 text-xs">&copy; 2024. GetAccessIQ.</span>
+          <span className="text-gray-400 text-xs">All rights reserved.</span>
+          <Link href="#" className="text-gray-400 text-xs hover:text-white transition-colors">Terms of Use.</Link>
+          <Link href="#" className="text-gray-400 text-xs hover:text-white transition-colors">Privacy Policy.</Link>
+          <Link href="#" className="text-gray-400 text-xs hover:text-white transition-colors">Accessibility</Link>
         </div>
       </div>
     </footer>

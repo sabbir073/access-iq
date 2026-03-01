@@ -27,7 +27,7 @@ const HeroSection = () => {
                     <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="none" stroke="#00d4aa" strokeWidth="1.5"/>
                     <path d="M9 12l2 2 4-4" stroke="#00d4aa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  <span className="text-gray-400 text-[13px] font-medium">{badge}</span>
+                  <span className="text-gray-300 text-[13px] font-medium">{badge}</span>
                 </div>
               ))}
             </div>
@@ -44,26 +44,26 @@ const HeroSection = () => {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#00d4aa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span className="text-[#00d4aa] text-[13px] font-medium">Trusted Accessibility Experts</span>
+                <span className="text-white text-[13px] font-medium">Trusted Accessibility Experts</span>
               </div>
 
               {/* Main heading */}
-              <h1 className="text-[32px] md:text-[38px] lg:text-[44px] font-bold leading-[1.15] text-white mb-6 tracking-tight">
+              <h1 className="text-[34px] md:text-[42px] lg:text-[50px] font-bold leading-[1.15] text-white mb-6 tracking-tight">
                 Enterprise-Grade Accessibility Compliance.{" "}
                 <span className="gradient-text">Beyond Automated Scans.</span>
               </h1>
 
               {/* Description */}
-              <p className="text-gray-400 text-[16px] leading-[1.7] mb-8 max-w-[520px]">
+              <p className="text-gray-300 text-[17px] leading-[1.7] mb-8 max-w-[540px]">
                 We help businesses achieve WAG 2.1 AA &amp; ADA compliance through expert-led audits, AI-powered analysis, and verified remediation.
               </p>
 
               {/* CTA Buttons */}
               <div className="flex items-center gap-4 mb-10">
-                <button className="bg-gradient-to-r from-[#00d4aa] to-[#0088cc] text-white text-[14px] font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-[#00d4aa]/20">
+                <button className="bg-gradient-to-r from-[#00d4aa] to-[#0088cc] text-white text-[14px] font-semibold px-7 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-[#00d4aa]/20">
                   Run Free Quick Scan
                 </button>
-                <button className="text-white text-[14px] font-medium px-7 py-3.5 rounded-xl border border-white/20 hover:border-white/40 hover:bg-white/[0.03] transition-all">
+                <button className="text-white text-[14px] font-medium px-7 py-3.5 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/[0.03] transition-all">
                   Book Expert Audit
                 </button>
               </div>
@@ -72,12 +72,12 @@ const HeroSection = () => {
               <div className="flex items-center gap-10">
                 <div>
                   <div className="text-white text-[36px] font-bold leading-none">99%</div>
-                  <div className="text-gray-500 text-[13px] mt-1.5">Client Satisfaction</div>
+                  <div className="text-gray-400 text-[13px] mt-1.5">Client Satisfaction</div>
                 </div>
                 <div className="w-px h-12" style={{ background: "linear-gradient(180deg, transparent, rgba(0, 212, 170, 0.3), transparent)" }} />
                 <div>
                   <div className="text-white text-[36px] font-bold leading-none">120+</div>
-                  <div className="text-gray-500 text-[13px] mt-1.5">Companies Trust AccessIQ</div>
+                  <div className="text-gray-400 text-[13px] mt-1.5">Companies Trust AccessIQ</div>
                 </div>
               </div>
             </div>

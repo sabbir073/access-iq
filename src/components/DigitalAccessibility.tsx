@@ -64,14 +64,14 @@ const DigitalAccessibility = () => {
         {/* Section Header - Title left, Description right */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-14">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight">
               Digital Accessibility
             </h2>
-            <p className="text-2xl md:text-3xl lg:text-[32px] font-bold leading-tight mt-3">
+            <p className="text-2xl md:text-3xl lg:text-[34px] font-bold leading-tight mt-3">
               <span className="gradient-text">Services You Can Trust</span>
             </p>
           </div>
-          <p className="text-gray-400 text-base max-w-md leading-relaxed lg:pb-1">
+          <p className="text-gray-300 text-base max-w-md leading-relaxed lg:pb-1">
             Track and improve your website&apos;s accessibility with real-time insights and comprehensive audits. We help you stay ahead of ADA &amp; WCAG compliance and eliminate legal risks.
           </p>
         </div>
@@ -185,7 +185,7 @@ const DigitalAccessibility = () => {
               <button
                 className="flex items-center gap-2 text-white text-sm font-semibold px-5 py-2.5 hover:opacity-90 transition-opacity"
                 style={{
-                  borderRadius: "10px",
+                  borderRadius: "9999px",
                   background: "linear-gradient(135deg, #00d4aa, #0088cc)",
                   width: "fit-content",
                 }}
@@ -203,21 +203,21 @@ const DigitalAccessibility = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-28 mb-28">
           {/* Left Content */}
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight">
               Expert audit completed.
             </h2>
-            <p className="text-2xl md:text-3xl lg:text-[32px] font-bold leading-tight mt-3 mb-6">
+            <p className="text-2xl md:text-3xl lg:text-[34px] font-bold leading-tight mt-3 mb-6">
               <span className="gradient-text">Verified. Certified.</span>
             </p>
 
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-md">
+            <p className="text-gray-300 text-base leading-relaxed mb-8 max-w-md">
               Following the expert audit, clients receive a verifiable accessibility and access to a citification portal that supports audits. and compliance tracking.
             </p>
 
             <button
               className="flex items-center gap-2 text-white font-semibold px-7 py-3.5 hover:opacity-90 transition-opacity text-sm cursor-pointer"
               style={{
-                borderRadius: "12px",
+                borderRadius: "9999px",
                 background: "linear-gradient(135deg, #00d4aa, #0088cc)",
               }}
             >
@@ -328,7 +328,7 @@ const DigitalAccessibility = () => {
           {/* removed - glow moved to between sections */}
 
           <div className="relative z-10 mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight">
               Trusted by{" "}
               <span className="gradient-text">industry Leaders</span>
             </h2>
@@ -351,7 +351,7 @@ const DigitalAccessibility = () => {
           {/* Right - Quote, Name, Navigation */}
           <div className="flex-1 flex flex-col justify-between">
             {/* Quote */}
-            <p className="text-gray-300 text-xl md:text-2xl lg:text-[26px] leading-relaxed font-light">
+            <p className="text-gray-200 text-xl md:text-2xl lg:text-[26px] leading-relaxed font-light">
               &ldquo;{testimonials[activeTestimonial].quote}&rdquo;
             </p>
 
@@ -424,12 +424,10 @@ const DigitalAccessibility = () => {
 
             {/* Content */}
             <div className="relative z-10 px-8 md:px-16 py-14 md:py-16 text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
-                Get Your Verified Accessibility
-                <br />
-                Report Today
+              <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold text-white mb-4 leading-tight whitespace-nowrap">
+                Get Your Verified Accessibility Report Today
               </h2>
-              <p className="text-white/70 text-base max-w-xl mx-auto mb-8">
+              <p className="text-white/85 text-base max-w-xl mx-auto mb-8">
                 Ensure your site is WCAG ADA compliant and minimizes legal risk.
               </p>
               <button className="inline-flex items-center gap-2 bg-white text-[#0b1a2a] font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-colors text-sm cursor-pointer">
