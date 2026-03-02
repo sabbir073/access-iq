@@ -49,22 +49,15 @@ const CertificationPortal = () => {
           </div>
 
           {/* Main content grid - image left, cards + button right */}
-          <div className="grid lg:grid-cols-[42%_58%] gap-8 lg:gap-10 items-center">
+          <div className="grid lg:grid-cols-[50%_50%] gap-8 lg:gap-10 items-center">
             {/* Left - Dashboard image with border glow */}
             <div className="relative">
-              <div
-                className="relative rounded-2xl overflow-hidden"
-                style={{
-                  border: "3px solid rgba(0,180,220,0.35)",
-                  boxShadow:
-                    "0 0 30px rgba(0,180,220,0.12), 0 20px 60px rgba(0,0,0,0.08)",
-                }}
-              >
+              <div className="relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/image-158.png"
+                  src="/images/certification-portal.png"
                   alt="Certification Portal Dashboard"
                   width={700}
-                  height={490}
+                  height={580}
                   className="w-full h-auto"
                 />
               </div>
@@ -80,25 +73,21 @@ const CertificationPortal = () => {
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                     style={{ background: "rgba(0,212,170,0.10)" }}
                   >
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                        stroke="#00d4aa"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M21 21l-4-4m2-3a5 5 0 11-10 0 5 5 0 0110 0z"
-                        stroke="#00d4aa"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
+                    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M3.75 6.66671C3.75 4.13541 5.80203 2.08337 8.33333 2.08337H28.3333C30.8647 2.08337 32.9167 4.13541 32.9167 6.66671V20.7594C31.3557 19.7515 29.4962 19.1667 27.5 19.1667C21.9772 19.1667 17.5 23.6439 17.5 29.1667C17.5 32.9317 19.5807 36.2109 22.655 37.9167H8.33333C5.80203 37.9167 3.75 35.8647 3.75 33.3334V6.66671ZM12.5 10.4167C11.8096 10.4167 11.25 10.9764 11.25 11.6667C11.25 12.3571 11.8096 12.9167 12.5 12.9167H24.1667C24.857 12.9167 25.4167 12.3571 25.4167 11.6667C25.4167 10.9764 24.857 10.4167 24.1667 10.4167H12.5ZM12.5 17.0834C11.8096 17.0834 11.25 17.643 11.25 18.3334C11.25 19.0237 11.8096 19.5834 12.5 19.5834H17.5C18.1903 19.5834 18.75 19.0237 18.75 18.3334C18.75 17.643 18.1903 17.0834 17.5 17.0834H12.5Z" fill="url(#cpGrad3a)" fillOpacity="0.8"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M27.5 25C25.1988 25 23.3333 26.8655 23.3333 29.1666C23.3333 31.4678 25.1988 33.3333 27.5 33.3333C28.651 33.3333 29.6905 32.8688 30.4463 32.113C31.2022 31.3571 31.6667 30.3176 31.6667 29.1666C31.6667 26.8655 29.8012 25 27.5 25ZM20 29.1666C20 25.0245 23.3578 21.6666 27.5 21.6666C31.6422 21.6666 35 25.0245 35 29.1666C35 30.6335 34.5778 32.0033 33.8497 33.1593L36.1785 35.4881C36.8293 36.139 36.8293 37.1943 36.1785 37.8451C35.5277 38.496 34.4723 38.496 33.8215 37.8451L31.4927 35.5163C30.3367 36.2445 28.9668 36.6666 27.5 36.6666C23.3578 36.6666 20 33.3088 20 29.1666Z" fill="url(#cpGrad3b)" fillOpacity="0.8"/>
+                      <defs>
+                        <linearGradient id="cpGrad3a" x1="34.8449" y1="20" x2="3.74997" y2="20.0087" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#3770FD"/>
+                          <stop offset="0.5" stopColor="#2FB8DC"/>
+                          <stop offset="1" stopColor="#00E19A"/>
+                        </linearGradient>
+                        <linearGradient id="cpGrad3b" x1="37.7684" y1="29.9999" x2="20" y2="30.006" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#3770FD"/>
+                          <stop offset="0.5" stopColor="#2FB8DC"/>
+                          <stop offset="1" stopColor="#00E19A"/>
+                        </linearGradient>
+                      </defs>
                     </svg>
                   </div>
 
@@ -118,19 +107,15 @@ const CertificationPortal = () => {
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                     style={{ background: "rgba(0,136,204,0.10)" }}
                   >
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                        stroke="#0088cc"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
+                    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M20.0007 2.08325C10.1056 2.08325 2.08398 10.1048 2.08398 19.9999C2.08398 29.8951 10.1056 37.9166 20.0007 37.9166C29.8958 37.9166 37.9173 29.8951 37.9173 19.9999C37.9173 10.1048 29.8958 2.08325 20.0007 2.08325ZM21.6673 11.6666C21.6673 10.7461 20.9212 9.99992 20.0007 9.99992C19.0802 9.99992 18.334 10.7461 18.334 11.6666V16.18C16.8623 16.8229 15.834 18.2913 15.834 19.9999C15.834 22.3011 17.6995 24.1666 20.0007 24.1666C20.538 24.1666 21.0517 24.0649 21.5233 23.8796L23.8222 26.1784C24.473 26.8293 25.5283 26.8293 26.1792 26.1784C26.83 25.5276 26.83 24.4723 26.1792 23.8214L23.8803 21.5226C24.0657 21.0509 24.1673 20.5373 24.1673 19.9999C24.1673 18.2913 23.139 16.8229 21.6673 16.18V11.6666Z" fill="url(#cpGrad2)" fillOpacity="0.8"/>
+                      <defs>
+                        <linearGradient id="cpGrad2" x1="40.2862" y1="19.9999" x2="2.08395" y2="20.013" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#3770FD"/>
+                          <stop offset="0.5" stopColor="#2FB8DC"/>
+                          <stop offset="1" stopColor="#00E19A"/>
+                        </linearGradient>
+                      </defs>
                     </svg>
                   </div>
 

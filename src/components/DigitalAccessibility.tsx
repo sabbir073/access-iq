@@ -106,7 +106,7 @@ const DigitalAccessibility = () => {
               }}
             >
               <Image
-                src="/images/image-163.png"
+                src="/images/digital-accessibility-dashboard.png"
                 alt="Accessibility Issues Over Time"
                 width={800}
                 height={520}
@@ -272,7 +272,7 @@ const DigitalAccessibility = () => {
               }}
             >
               <Image
-                src="/images/certificate.png"
+                src="/images/cert-image.png"
                 alt="Certificate of Accessibility Compliance"
                 width={700}
                 height={490}

@@ -4,13 +4,13 @@ import React from "react";
 import Image from "next/image";
 
 const logos = [
-  { src: "/images/logos/target.svg", alt: "Target", width: 200 },
-  { src: "/images/logos/siemens.svg", alt: "Siemens", width: 210 },
-  { src: "/images/logos/ford.svg", alt: "Ford", width: 160 },
-  { src: "/images/logos/accenture.svg", alt: "Accenture", width: 210 },
-  { src: "/images/logos/soundture.svg", alt: "Soundture", width: 210 },
-  { src: "/images/logos/redbull.svg", alt: "Red Bull", width: 190 },
-  { src: "/images/logos/accessiq.svg", alt: "AccessIQ", width: 190 },
+  { src: "/images/logos/target.svg", alt: "Target", width: 120 },
+  { src: "/images/logos/siemens.svg", alt: "Siemens", width: 130 },
+  { src: "/images/logos/ford.svg", alt: "Ford", width: 100 },
+  { src: "/images/logos/accenture.svg", alt: "Accenture", width: 130 },
+  { src: "/images/logos/vector.svg", alt: "Vector", width: 130 },
+  { src: "/images/logos/redbull.svg", alt: "Red Bull", width: 120 },
+  { src: "/images/logos/accessiq.svg", alt: "AccessIQ", width: 120 },
 ];
 
 const LogoMarquee = () => {
@@ -40,14 +40,14 @@ const LogoMarquee = () => {
           {logos.map((logo, i) => (
             <div
               key={`a-${i}`}
-              className="flex items-center justify-center shrink-0 mx-5 opacity-50 hover:opacity-80 transition-opacity"
+              className="flex items-center justify-center shrink-0 mx-10"
             >
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 width={logo.width}
                 height={56}
-                className="h-[60px] w-auto object-contain"
+                className="h-[36px] w-auto object-contain"
               />
             </div>
           ))}
@@ -57,14 +57,14 @@ const LogoMarquee = () => {
           {logos.map((logo, i) => (
             <div
               key={`b-${i}`}
-              className="flex items-center justify-center shrink-0 mx-5 opacity-50 hover:opacity-80 transition-opacity"
+              className="flex items-center justify-center shrink-0 mx-10"
             >
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 width={logo.width}
                 height={56}
-                className="h-[60px] w-auto object-contain"
+                className="h-[36px] w-auto object-contain"
               />
             </div>
           ))}

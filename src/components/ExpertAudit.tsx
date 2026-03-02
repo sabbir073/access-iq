@@ -56,13 +56,13 @@ const ExpertAudit = () => {
           {/* Right - Certificate & Person */}
           <div className="relative">
             {/* Certificate Image */}
-            <div className="relative rounded-xl overflow-hidden shadow-2xl" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+            <div className="relative">
               <Image
-                src="/images/certificate.png"
+                src="/images/cert-image.png"
                 alt="Accessibility Compliance Certificate"
-                width={600}
-                height={420}
-                className="w-full h-auto"
+                width={700}
+                height={500}
+                className="w-full h-auto rounded-xl"
               />
             </div>
 
