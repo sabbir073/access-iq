@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import LogoMarquee from "./LogoMarquee";
+import ScrollReveal from "./ScrollReveal";
 
 const AccessibilitySolutions = () => {
   return (
@@ -26,6 +29,7 @@ const AccessibilitySolutions = () => {
       <div className="py-16 md:py-24">
         <div className="container mx-auto">
           {/* Section Header */}
+          <ScrollReveal animation="fade-in-up">
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-[#0b0f1a] leading-tight">
               Accessibility Solutions for
@@ -34,8 +38,10 @@ const AccessibilitySolutions = () => {
               <span className="gradient-text">Enterprise Teams</span>
             </h2>
           </div>
+          </ScrollReveal>
 
           {/* Process Steps Bar - inside a card */}
+          <ScrollReveal animation="fade-in-up" delay={200}>
           <div className="flex justify-center mb-20">
             <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white border border-gray-200 shadow-sm flex-wrap justify-center">
               {[
@@ -95,10 +101,12 @@ const AccessibilitySolutions = () => {
               </button>
             </div>
           </div>
+          </ScrollReveal>
 
           {/* ============ ITEM 1: ADA & WCAG Compliance ============ */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20">
             {/* Left - Text content */}
+            <ScrollReveal animation="fade-in-left">
             <div>
               <h3 className="text-[#0b0f1a] text-2xl md:text-3xl lg:text-[32px] font-bold mb-5">
                 ADA &amp; WCAG Compliance
@@ -140,8 +148,10 @@ const AccessibilitySolutions = () => {
                 className="h-[60px] md:h-[68px] w-auto object-contain"
               />
             </div>
+            </ScrollReveal>
 
             {/* Right - Dashboard image */}
+            <ScrollReveal animation="fade-in-right" delay={200}>
             <div className="relative overflow-visible">
               <Image
                 src="/images/image-158.png"
@@ -165,11 +175,13 @@ const AccessibilitySolutions = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           </div>
 
           {/* ============ ITEM 2: Reduce Legal Risk ============ */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20">
             {/* Left - Image */}
+            <ScrollReveal animation="fade-in-left">
             <div className="order-2 lg:order-1">
               <Image
                 src="/images/dashboard-risk.png"
@@ -179,8 +191,10 @@ const AccessibilitySolutions = () => {
                 className="w-full h-auto rounded-2xl"
               />
             </div>
+            </ScrollReveal>
 
             {/* Right - Text content */}
+            <ScrollReveal animation="fade-in-right" delay={200}>
             <div className="order-1 lg:order-2 lg:pl-4">
               <h3 className="text-[#0b0f1a] text-2xl md:text-3xl lg:text-[32px] font-bold mb-5">
                 Reduce Legal Risk
@@ -214,11 +228,13 @@ const AccessibilitySolutions = () => {
                 </svg>
               </a>
             </div>
+            </ScrollReveal>
           </div>
 
           {/* ============ ITEM 3: Fast & Reliable Fixes ============ */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left - Text content */}
+            <ScrollReveal animation="fade-in-left">
             <div>
               <h3 className="text-[#0b0f1a] text-2xl md:text-3xl lg:text-[32px] font-bold mb-5">
                 Fast &amp; Reliable Fixes
@@ -243,8 +259,10 @@ const AccessibilitySolutions = () => {
                 </button>
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Right - Chart image */}
+            <ScrollReveal animation="fade-in-right" delay={200}>
             <div className="-mx-4 md:mx-0">
               <Image
                 src="/images/fixes-chart.png"
@@ -254,6 +272,7 @@ const AccessibilitySolutions = () => {
                 className="w-full h-auto rounded-none md:rounded-2xl"
               />
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

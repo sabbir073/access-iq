@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import ScrollReveal from "../ScrollReveal";
 
 const CertificationPortal = () => {
   return (
@@ -12,6 +15,7 @@ const CertificationPortal = () => {
       <div className="py-16 md:py-24">
         <div className="container mx-auto">
           {/* Section Header */}
+          <ScrollReveal animation="fade-in-up">
           <div className="text-center mb-4">
             <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-[#0b0f1a] leading-tight">
               Your Certification Portal &amp;{" "}
@@ -19,7 +23,10 @@ const CertificationPortal = () => {
             </h2>
           </div>
 
+          </ScrollReveal>
+
           {/* Feature badges row */}
+          <ScrollReveal animation="fade-in-up" delay={100}>
           <div className="flex items-center justify-center gap-6 md:gap-10 flex-wrap mb-14">
             {[
               "Reduce Legal Risk",
@@ -47,10 +54,12 @@ const CertificationPortal = () => {
               </div>
             ))}
           </div>
+          </ScrollReveal>
 
           {/* Main content grid - image left, cards + button right */}
           <div className="grid lg:grid-cols-[50%_50%] gap-8 lg:gap-10 items-center">
             {/* Left - Dashboard image with border glow */}
+            <ScrollReveal animation="fade-in-left" delay={200} duration={800}>
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
@@ -62,8 +71,10 @@ const CertificationPortal = () => {
                 />
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Right - 2 feature cards side by side + button */}
+            <ScrollReveal animation="fade-in-right" delay={400} duration={800}>
             <div>
               <div className="grid grid-cols-2 gap-5">
                 {/* Audit ID Card */}
@@ -155,6 +166,7 @@ const CertificationPortal = () => {
                 </button>
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

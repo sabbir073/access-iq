@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import ScrollReveal from "./ScrollReveal";
 
 const CTASection = () => {
   return (
@@ -11,6 +14,7 @@ const CTASection = () => {
       }}
     >
       <div className="container mx-auto">
+        <ScrollReveal animation="scale-in" duration={800}>
         <div className="relative">
           {/* The card */}
           <div
@@ -122,6 +126,7 @@ const CTASection = () => {
             }}
           />
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import ScrollReveal from "../ScrollReveal";
 
 const deliverables = [
   {
@@ -96,6 +99,7 @@ const WhatYouGet = () => {
           {/* Main content grid */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
             {/* Left side - Header + Checklist + Image */}
+            <ScrollReveal animation="fade-in-left" duration={800}>
             <div>
               {/* Section Header */}
               <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-[#0b0f1a] leading-tight mb-3">
@@ -145,8 +149,10 @@ const WhatYouGet = () => {
                 />
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Right side - 4 Deliverable cards (2x2) */}
+            <ScrollReveal animation="fade-in-right" delay={200} duration={800} stagger>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 grid-rows-2">
               {deliverables.map((item, index) => (
                 <div
@@ -173,6 +179,7 @@ const WhatYouGet = () => {
                 </div>
               ))}
             </div>
+            </ScrollReveal>
           </div>
 
           {/* Bottom CTA */}

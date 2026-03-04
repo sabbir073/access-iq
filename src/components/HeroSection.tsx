@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import AnimatedGradient from "./AnimatedGradient";
+import ScrollReveal from "./ScrollReveal";
 
 const HeroSection = () => {
   return (
@@ -15,6 +16,7 @@ const HeroSection = () => {
         {/* Compliance badges bar */}
         <div className="pt-[88px] pb-4">
           <div className="container mx-auto">
+            <ScrollReveal animation="fade-in-down" delay={100}>
             <div className="flex items-center justify-center gap-8 flex-wrap">
               {[
                 "ADA",
@@ -41,6 +43,7 @@ const HeroSection = () => {
                 </div>
               ))}
             </div>
+            </ScrollReveal>
           </div>
         </div>
 
@@ -50,6 +53,7 @@ const HeroSection = () => {
             {/* Left side - Text content */}
             <div>
               {/* Trust badge */}
+              <ScrollReveal animation="fade-in-up" delay={200}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-7">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
@@ -69,19 +73,25 @@ const HeroSection = () => {
                 </svg>
                 <span className="text-white text-[13px] font-medium">Trusted Accessibility Experts</span>
               </div>
+              </ScrollReveal>
 
               {/* Main heading */}
+              <ScrollReveal animation="fade-in-up" delay={300}>
               <h1 className="text-[34px] md:text-[42px] lg:text-[50px] font-bold leading-[1.15] text-white mb-6 tracking-tight">
                 Enterprise-Grade Accessibility Compliance.{" "}
                 <span className="gradient-text">Beyond Automated Scans.</span>
               </h1>
+              </ScrollReveal>
 
               {/* Description */}
+              <ScrollReveal animation="fade-in-up" delay={400}>
               <p className="text-gray-300 text-[17px] leading-[1.7] mb-8 max-w-[540px]">
                 We help businesses achieve WAG 2.1 AA &amp; ADA compliance through expert-led audits, AI-powered analysis, and verified remediation.
               </p>
+              </ScrollReveal>
 
               {/* CTA Buttons */}
+              <ScrollReveal animation="fade-in-up" delay={500}>
               <div className="flex items-center gap-4 mb-10">
                 <button className="bg-gradient-to-r from-[#00d4aa] to-[#0088cc] text-white text-[14px] font-semibold px-7 py-3.5 rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-[#00d4aa]/20">
                   Run Free Quick Scan
@@ -90,8 +100,10 @@ const HeroSection = () => {
                   Book Expert Audit
                 </button>
               </div>
+              </ScrollReveal>
 
               {/* Stats */}
+              <ScrollReveal animation="fade-in-up" delay={600}>
               <div className="flex items-center gap-10">
                 <div>
                   <div className="text-white text-[36px] font-bold leading-none">99%</div>
@@ -103,9 +115,11 @@ const HeroSection = () => {
                   <div className="text-gray-400 text-[13px] mt-1.5">Companies Trust AccessIQ</div>
                 </div>
               </div>
+              </ScrollReveal>
             </div>
 
             {/* Right side - Dashboard image */}
+            <ScrollReveal animation="fade-in-right" delay={400} duration={800}>
             <div className="relative">
               {/* Glow behind dashboard */}
               <div className="absolute -inset-8 bg-[#00d4aa]/[0.04] rounded-3xl blur-3xl" />
@@ -124,6 +138,7 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </div>
 

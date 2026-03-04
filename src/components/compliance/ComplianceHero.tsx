@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import AnimatedGradient from "../AnimatedGradient";
+import ScrollReveal from "../ScrollReveal";
 
 const ComplianceHero = () => {
   return (
@@ -16,6 +17,7 @@ const ComplianceHero = () => {
         <div className="container mx-auto pt-[100px] pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-[54%_46%] gap-6 items-center min-h-[540px]">
             {/* Left side - Text content */}
+            <ScrollReveal animation="fade-in-up" duration={800}>
             <div>
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-7">
@@ -95,8 +97,10 @@ const ComplianceHero = () => {
                 )}
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Right side - Dashboard image */}
+            <ScrollReveal animation="fade-in-right" delay={300} duration={800}>
             <div className="relative">
               <Image
                 src="/images/Compliance Page MAckBook.png"
@@ -107,6 +111,7 @@ const ComplianceHero = () => {
                 priority
               />
             </div>
+            </ScrollReveal>
           </div>
         </div>
 

@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import ScrollReveal from "../ScrollReveal";
 
 const services = [
   {
@@ -84,6 +87,7 @@ const ComplianceServices = () => {
       <div className="py-16 md:py-24">
         <div className="container mx-auto">
           {/* Section Header */}
+          <ScrollReveal animation="fade-in-up">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-[#0b0f1a] leading-tight">
               Our Compliance Services
@@ -93,8 +97,10 @@ const ComplianceServices = () => {
               status.
             </p>
           </div>
+          </ScrollReveal>
 
           {/* Services Grid - 3 cards */}
+          <ScrollReveal animation="fade-in-up" delay={200} stagger>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service) => (
               <div
@@ -166,6 +172,7 @@ const ComplianceServices = () => {
               </div>
             ))}
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

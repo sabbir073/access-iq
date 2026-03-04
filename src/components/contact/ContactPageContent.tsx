@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import AnimatedGradient from "../AnimatedGradient";
+import ScrollReveal from "../ScrollReveal";
 
 const helpCards = [
   {
@@ -95,369 +96,381 @@ const ContactPageContent = () => {
         <div className="pt-[100px] pb-10">
           <div className="container mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-7">
-              <svg width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" clipRule="evenodd" d="M26.92 14.7868C24.967 14.7377 23.033 14.7377 21.08 14.7868L21.0218 14.7883C19.497 14.8265 18.27 14.8574 17.2867 15.0286C16.2572 15.2079 15.4205 15.5518 14.7136 16.2613C14.0097 16.9679 13.6676 17.7926 13.4918 18.8054C13.3243 19.7698 13.2988 20.9668 13.2672 22.4496L13.2659 22.5084C13.2447 23.5047 13.2447 24.4952 13.2659 25.4916L13.2672 25.5503C13.2988 27.0332 13.3243 28.2302 13.4918 29.1946C13.6676 30.2074 14.0097 31.0321 14.7136 31.7386C15.4205 32.4482 16.2572 32.7921 17.2867 32.9714C18.27 33.1426 19.497 33.1734 21.0218 33.2117L21.08 33.2132C23.033 33.2622 24.967 33.2622 26.92 33.2132L26.9782 33.2117C28.503 33.1734 29.73 33.1426 30.7133 32.9714C31.7428 32.7921 32.5795 32.4482 33.2864 31.7386C33.9903 31.0321 34.3324 30.2074 34.5082 29.1946C34.6757 28.2302 34.7012 27.0332 34.7328 25.5503L34.7341 25.4916C34.7553 24.4952 34.7553 23.5047 34.7341 22.5084L34.7328 22.4496C34.7012 20.9668 34.6757 19.7698 34.5082 18.8054C34.3324 17.7926 33.9903 16.9679 33.2864 16.2613C32.5795 15.5518 31.7428 15.2079 30.7133 15.0286C29.73 14.8574 28.503 14.8266 26.9782 14.7883L26.92 14.7868ZM19.3818 19.8545C19.0253 19.6437 18.5653 19.7619 18.3545 20.1184C18.1437 20.475 18.2619 20.9349 18.6184 21.1457L21.5604 22.8851C22.4313 23.4 23.1827 23.7501 24.0001 23.7501C24.8175 23.7501 25.569 23.4 26.4398 22.8851L29.3818 21.1457C29.7384 20.9349 29.8565 20.475 29.6457 20.1184C29.4349 19.7619 28.975 19.6437 28.6184 19.8545L25.6764 21.594C24.832 22.0931 24.3831 22.2501 24.0001 22.2501C23.6171 22.2501 23.1682 22.0931 22.3238 21.594L19.3818 19.8545Z" fill="url(#ctBadgeEmailGrad)" fillOpacity="0.8"/>
-                <defs>
-                  <linearGradient id="ctBadgeEmailGrad" x1="36.1714" y1="24" x2="13.25" y2="24.0091" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#3770FD"/>
-                    <stop offset="0.5" stopColor="#2FB8DC"/>
-                    <stop offset="1" stopColor="#00E19A"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <span className="text-white text-[13px] font-medium">
-                Get in Touch
-              </span>
-            </div>
+            <ScrollReveal animation="fade-in-up" delay={100}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-7">
+                <svg width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M26.92 14.7868C24.967 14.7377 23.033 14.7377 21.08 14.7868L21.0218 14.7883C19.497 14.8265 18.27 14.8574 17.2867 15.0286C16.2572 15.2079 15.4205 15.5518 14.7136 16.2613C14.0097 16.9679 13.6676 17.7926 13.4918 18.8054C13.3243 19.7698 13.2988 20.9668 13.2672 22.4496L13.2659 22.5084C13.2447 23.5047 13.2447 24.4952 13.2659 25.4916L13.2672 25.5503C13.2988 27.0332 13.3243 28.2302 13.4918 29.1946C13.6676 30.2074 14.0097 31.0321 14.7136 31.7386C15.4205 32.4482 16.2572 32.7921 17.2867 32.9714C18.27 33.1426 19.497 33.1734 21.0218 33.2117L21.08 33.2132C23.033 33.2622 24.967 33.2622 26.92 33.2132L26.9782 33.2117C28.503 33.1734 29.73 33.1426 30.7133 32.9714C31.7428 32.7921 32.5795 32.4482 33.2864 31.7386C33.9903 31.0321 34.3324 30.2074 34.5082 29.1946C34.6757 28.2302 34.7012 27.0332 34.7328 25.5503L34.7341 25.4916C34.7553 24.4952 34.7553 23.5047 34.7341 22.5084L34.7328 22.4496C34.7012 20.9668 34.6757 19.7698 34.5082 18.8054C34.3324 17.7926 33.9903 16.9679 33.2864 16.2613C32.5795 15.5518 31.7428 15.2079 30.7133 15.0286C29.73 14.8574 28.503 14.8266 26.9782 14.7883L26.92 14.7868ZM19.3818 19.8545C19.0253 19.6437 18.5653 19.7619 18.3545 20.1184C18.1437 20.475 18.2619 20.9349 18.6184 21.1457L21.5604 22.8851C22.4313 23.4 23.1827 23.7501 24.0001 23.7501C24.8175 23.7501 25.569 23.4 26.4398 22.8851L29.3818 21.1457C29.7384 20.9349 29.8565 20.475 29.6457 20.1184C29.4349 19.7619 28.975 19.6437 28.6184 19.8545L25.6764 21.594C24.832 22.0931 24.3831 22.2501 24.0001 22.2501C23.6171 22.2501 23.1682 22.0931 22.3238 21.594L19.3818 19.8545Z" fill="url(#ctBadgeEmailGrad)" fillOpacity="0.8"/>
+                  <defs>
+                    <linearGradient id="ctBadgeEmailGrad" x1="36.1714" y1="24" x2="13.25" y2="24.0091" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#3770FD"/>
+                      <stop offset="0.5" stopColor="#2FB8DC"/>
+                      <stop offset="1" stopColor="#00E19A"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span className="text-white text-[13px] font-medium">
+                  Get in Touch
+                </span>
+              </div>
+            </ScrollReveal>
 
             {/* Heading */}
-            <h1 className="text-[34px] md:text-[42px] lg:text-[50px] font-bold leading-[1.15] text-white mb-6 tracking-tight whitespace-nowrap">
-              Talk to an Accessibility Compliance Expert
-            </h1>
+            <ScrollReveal animation="fade-in-up" delay={200}>
+              <h1 className="text-[34px] md:text-[42px] lg:text-[50px] font-bold leading-[1.15] text-white mb-6 tracking-tight whitespace-nowrap">
+                Talk to an Accessibility Compliance Expert
+              </h1>
+            </ScrollReveal>
 
             {/* Compliance badges */}
-            <div className="flex items-center justify-center gap-6">
-              {["WCAG 2.1 AA & AA", "ADA"].map((badge) => (
-                <div key={badge} className="flex items-center gap-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M12.057 1.75C14.248 1.75 15.969 1.75001 17.312 1.93101C18.689 2.11601 19.781 2.50301 20.639 3.36101C21.497 4.21901 21.884 5.31099 22.069 6.68799C22.25 8.03099 22.25 9.75199 22.25 11.943V12.057C22.25 14.248 22.25 15.969 22.069 17.312C21.884 18.689 21.497 19.781 20.639 20.639C19.781 21.497 18.689 21.884 17.312 22.069C15.969 22.25 14.248 22.25 12.057 22.25H11.943C9.75199 22.25 8.03099 22.25 6.68799 22.069C5.31099 21.884 4.21901 21.497 3.36101 20.639C2.50301 19.781 2.11601 18.689 1.93101 17.312C1.75001 15.969 1.75 14.248 1.75 12.057V11.943C1.75 9.75199 1.75001 8.03099 1.93101 6.68799C2.11601 5.31099 2.50301 4.21901 3.36101 3.36101C4.21901 2.50301 5.31099 2.11601 6.68799 1.93101C8.03099 1.75001 9.75199 1.75 11.943 1.75H12.057ZM16.676 8.26299C17.083 8.63599 17.11 9.269 16.737 9.676L11.237 15.676C11.053 15.877 10.794 15.994 10.522 16C10.249 16.006 9.98599 15.9 9.79299 15.707L7.29299 13.207C6.90199 12.817 6.90199 12.183 7.29299 11.793C7.68299 11.402 8.31701 11.402 8.70701 11.793L10.469 13.554L15.263 8.324C15.636 7.917 16.269 7.88999 16.676 8.26299Z" fill="white"/>
-                  </svg>
-                  <span className="text-gray-300 text-[13px] font-medium">
-                    {badge}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <ScrollReveal animation="fade-in-up" delay={300}>
+              <div className="flex items-center justify-center gap-6">
+                {["WCAG 2.1 AA & AA", "ADA"].map((badge) => (
+                  <div key={badge} className="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M12.057 1.75C14.248 1.75 15.969 1.75001 17.312 1.93101C18.689 2.11601 19.781 2.50301 20.639 3.36101C21.497 4.21901 21.884 5.31099 22.069 6.68799C22.25 8.03099 22.25 9.75199 22.25 11.943V12.057C22.25 14.248 22.25 15.969 22.069 17.312C21.884 18.689 21.497 19.781 20.639 20.639C19.781 21.497 18.689 21.884 17.312 22.069C15.969 22.25 14.248 22.25 12.057 22.25H11.943C9.75199 22.25 8.03099 22.25 6.68799 22.069C5.31099 21.884 4.21901 21.497 3.36101 20.639C2.50301 19.781 2.11601 18.689 1.93101 17.312C1.75001 15.969 1.75 14.248 1.75 12.057V11.943C1.75 9.75199 1.75001 8.03099 1.93101 6.68799C2.11601 5.31099 2.50301 4.21901 3.36101 3.36101C4.21901 2.50301 5.31099 2.11601 6.68799 1.93101C8.03099 1.75001 9.75199 1.75 11.943 1.75H12.057ZM16.676 8.26299C17.083 8.63599 17.11 9.269 16.737 9.676L11.237 15.676C11.053 15.877 10.794 15.994 10.522 16C10.249 16.006 9.98599 15.9 9.79299 15.707L7.29299 13.207C6.90199 12.817 6.90199 12.183 7.29299 11.793C7.68299 11.402 8.31701 11.402 8.70701 11.793L10.469 13.554L15.263 8.324C15.636 7.917 16.269 7.88999 16.676 8.26299Z" fill="white"/>
+                    </svg>
+                    <span className="text-gray-300 text-[13px] font-medium">
+                      {badge}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </div>
 
         {/* ====== CONTACT FORM SECTION - Single unified card ====== */}
         <div className="container mx-auto py-10 md:py-16">
           {/* Gradient border wrapper */}
-          <div
-            className="rounded-2xl p-[2px]"
-            style={{
-              background:
-                "linear-gradient(135deg, #00d4aa, #0088cc, #00d4aa)",
-            }}
-          >
-            {/* Inner card */}
+          <ScrollReveal animation="fade-in-up" delay={200} duration={800}>
             <div
-              className="rounded-2xl overflow-hidden"
+              className="rounded-2xl p-[2px]"
               style={{
                 background:
-                  "linear-gradient(180deg, #111d2e 0%, #0c1622 100%)",
+                  "linear-gradient(135deg, #00d4aa, #0088cc, #00d4aa)",
               }}
             >
-              <div className="grid lg:grid-cols-[42%_58%]">
-                {/* Left - Contact Information */}
-                <div className="p-7 md:p-9 lg:border-r lg:border-white/8">
-                <h2 className="text-white text-xl font-bold mb-8">
-                  Contact Information
-                </h2>
+              {/* Inner card */}
+              <div
+                className="rounded-2xl overflow-hidden"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #111d2e 0%, #0c1622 100%)",
+                }}
+              >
+                <div className="grid lg:grid-cols-[42%_58%]">
+                  {/* Left - Contact Information */}
+                  <div className="p-7 md:p-9 lg:border-r lg:border-white/8">
+                  <h2 className="text-white text-xl font-bold mb-8">
+                    Contact Information
+                  </h2>
 
-                <div className="space-y-5">
-                  {/* Email */}
-                  <div
-                    className="rounded-xl p-4"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                    }}
-                  >
-                    <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
-                      Email
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg flex items-center justify-center">
-                        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="24" cy="24" r="24" fill="#FAE9E9" fillOpacity="0.08"/>
-                          <path fillRule="evenodd" clipRule="evenodd" d="M26.92 14.7868C24.967 14.7377 23.033 14.7377 21.08 14.7868L21.0218 14.7883C19.497 14.8265 18.27 14.8574 17.2867 15.0286C16.2572 15.2079 15.4205 15.5518 14.7136 16.2613C14.0097 16.9679 13.6676 17.7926 13.4918 18.8054C13.3243 19.7698 13.2988 20.9668 13.2672 22.4496L13.2659 22.5084C13.2447 23.5047 13.2447 24.4952 13.2659 25.4916L13.2672 25.5503C13.2988 27.0332 13.3243 28.2302 13.4918 29.1946C13.6676 30.2074 14.0097 31.0321 14.7136 31.7386C15.4205 32.4482 16.2572 32.7921 17.2867 32.9714C18.27 33.1426 19.497 33.1734 21.0218 33.2117L21.08 33.2132C23.033 33.2622 24.967 33.2622 26.92 33.2132L26.9782 33.2117C28.503 33.1734 29.73 33.1426 30.7133 32.9714C31.7428 32.7921 32.5795 32.4482 33.2864 31.7386C33.9903 31.0321 34.3324 30.2074 34.5082 29.1946C34.6757 28.2302 34.7012 27.0332 34.7328 25.5503L34.7341 25.4916C34.7553 24.4952 34.7553 23.5047 34.7341 22.5084L34.7328 22.4496C34.7012 20.9668 34.6757 19.7698 34.5082 18.8054C34.3324 17.7926 33.9903 16.9679 33.2864 16.2613C32.5795 15.5518 31.7428 15.2079 30.7133 15.0286C29.73 14.8574 28.503 14.8266 26.9782 14.7883L26.92 14.7868ZM19.3818 19.8545C19.0253 19.6437 18.5653 19.7619 18.3545 20.1184C18.1437 20.475 18.2619 20.9349 18.6184 21.1457L21.5604 22.8851C22.4313 23.4 23.1827 23.7501 24.0001 23.7501C24.8175 23.7501 25.569 23.4 26.4398 22.8851L29.3818 21.1457C29.7384 20.9349 29.8565 20.475 29.6457 20.1184C29.4349 19.7619 28.975 19.6437 28.6184 19.8545L25.6764 21.594C24.832 22.0931 24.3831 22.2501 24.0001 22.2501C23.6171 22.2501 23.1682 22.0931 22.3238 21.594L19.3818 19.8545Z" fill="url(#ctEmailGrad)" fillOpacity="0.8"/>
-                          <defs>
-                            <linearGradient id="ctEmailGrad" x1="36.1714" y1="24" x2="13.25" y2="24.0091" gradientUnits="userSpaceOnUse">
-                              <stop stopColor="#3770FD"/>
-                              <stop offset="0.5" stopColor="#2FB8DC"/>
-                              <stop offset="1" stopColor="#00E19A"/>
-                            </linearGradient>
-                          </defs>
-                        </svg>
+                  <div className="space-y-5">
+                    {/* Email */}
+                    <div
+                      className="rounded-xl p-4"
+                      style={{
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid rgba(255,255,255,0.06)",
+                      }}
+                    >
+                      <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
+                        Email
                       </div>
-                      <span className="text-gray-300 text-sm">
-                        info@getaccessiq.com
-                      </span>
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center">
+                          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="24" fill="#FAE9E9" fillOpacity="0.08"/>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M26.92 14.7868C24.967 14.7377 23.033 14.7377 21.08 14.7868L21.0218 14.7883C19.497 14.8265 18.27 14.8574 17.2867 15.0286C16.2572 15.2079 15.4205 15.5518 14.7136 16.2613C14.0097 16.9679 13.6676 17.7926 13.4918 18.8054C13.3243 19.7698 13.2988 20.9668 13.2672 22.4496L13.2659 22.5084C13.2447 23.5047 13.2447 24.4952 13.2659 25.4916L13.2672 25.5503C13.2988 27.0332 13.3243 28.2302 13.4918 29.1946C13.6676 30.2074 14.0097 31.0321 14.7136 31.7386C15.4205 32.4482 16.2572 32.7921 17.2867 32.9714C18.27 33.1426 19.497 33.1734 21.0218 33.2117L21.08 33.2132C23.033 33.2622 24.967 33.2622 26.92 33.2132L26.9782 33.2117C28.503 33.1734 29.73 33.1426 30.7133 32.9714C31.7428 32.7921 32.5795 32.4482 33.2864 31.7386C33.9903 31.0321 34.3324 30.2074 34.5082 29.1946C34.6757 28.2302 34.7012 27.0332 34.7328 25.5503L34.7341 25.4916C34.7553 24.4952 34.7553 23.5047 34.7341 22.5084L34.7328 22.4496C34.7012 20.9668 34.6757 19.7698 34.5082 18.8054C34.3324 17.7926 33.9903 16.9679 33.2864 16.2613C32.5795 15.5518 31.7428 15.2079 30.7133 15.0286C29.73 14.8574 28.503 14.8266 26.9782 14.7883L26.92 14.7868ZM19.3818 19.8545C19.0253 19.6437 18.5653 19.7619 18.3545 20.1184C18.1437 20.475 18.2619 20.9349 18.6184 21.1457L21.5604 22.8851C22.4313 23.4 23.1827 23.7501 24.0001 23.7501C24.8175 23.7501 25.569 23.4 26.4398 22.8851L29.3818 21.1457C29.7384 20.9349 29.8565 20.475 29.6457 20.1184C29.4349 19.7619 28.975 19.6437 28.6184 19.8545L25.6764 21.594C24.832 22.0931 24.3831 22.2501 24.0001 22.2501C23.6171 22.2501 23.1682 22.0931 22.3238 21.594L19.3818 19.8545Z" fill="url(#ctEmailGrad)" fillOpacity="0.8"/>
+                            <defs>
+                              <linearGradient id="ctEmailGrad" x1="36.1714" y1="24" x2="13.25" y2="24.0091" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#3770FD"/>
+                                <stop offset="0.5" stopColor="#2FB8DC"/>
+                                <stop offset="1" stopColor="#00E19A"/>
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                        </div>
+                        <span className="text-gray-300 text-sm">
+                          info@getaccessiq.com
+                        </span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Phone */}
-                  <div
-                    className="rounded-xl p-4"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                    }}
-                  >
-                    <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
-                      Phone Number
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg flex items-center justify-center">
-                        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="24" cy="24" r="24" fill="#FAE9E9" fillOpacity="0.08"/>
-                          <path d="M29.6252 25.674L32.2682 27.25C32.8142 27.576 33.0961 28.21 32.9711 28.834C32.4601 31.393 29.8902 33.033 27.3732 32.342C21.4342 30.712 16.7951 26.087 15.1591 20.135C14.4671 17.617 16.1052 15.045 18.6652 14.533L18.682 14.53C19.307 14.405 19.9442 14.688 20.2692 15.237L21.8322 17.876C22.3882 18.815 22.112 20.024 21.203 20.628L19.5421 21.733C20.7141 24.54 22.9541 26.789 25.7531 27.959L26.8681 26.294C27.4771 25.387 28.6872 25.115 29.6252 25.674Z" fill="url(#ctPhoneGrad)" fillOpacity="0.8"/>
-                          <defs>
-                            <linearGradient id="ctPhoneGrad" x1="34.1904" y1="23.5006" x2="15" y2="23.5072" gradientUnits="userSpaceOnUse">
-                              <stop stopColor="#3770FD"/>
-                              <stop offset="0.5" stopColor="#2FB8DC"/>
-                              <stop offset="1" stopColor="#00E19A"/>
-                            </linearGradient>
-                          </defs>
-                        </svg>
+                    {/* Phone */}
+                    <div
+                      className="rounded-xl p-4"
+                      style={{
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid rgba(255,255,255,0.06)",
+                      }}
+                    >
+                      <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
+                        Phone Number
                       </div>
-                      <span className="text-gray-300 text-sm">
-                        +1 833-362-5610
-                      </span>
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center">
+                          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="24" fill="#FAE9E9" fillOpacity="0.08"/>
+                            <path d="M29.6252 25.674L32.2682 27.25C32.8142 27.576 33.0961 28.21 32.9711 28.834C32.4601 31.393 29.8902 33.033 27.3732 32.342C21.4342 30.712 16.7951 26.087 15.1591 20.135C14.4671 17.617 16.1052 15.045 18.6652 14.533L18.682 14.53C19.307 14.405 19.9442 14.688 20.2692 15.237L21.8322 17.876C22.3882 18.815 22.112 20.024 21.203 20.628L19.5421 21.733C20.7141 24.54 22.9541 26.789 25.7531 27.959L26.8681 26.294C27.4771 25.387 28.6872 25.115 29.6252 25.674Z" fill="url(#ctPhoneGrad)" fillOpacity="0.8"/>
+                            <defs>
+                              <linearGradient id="ctPhoneGrad" x1="34.1904" y1="23.5006" x2="15" y2="23.5072" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#3770FD"/>
+                                <stop offset="0.5" stopColor="#2FB8DC"/>
+                                <stop offset="1" stopColor="#00E19A"/>
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                        </div>
+                        <span className="text-gray-300 text-sm">
+                          +1 833-362-5610
+                        </span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Address */}
-                  <div
-                    className="rounded-xl p-4"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                    }}
-                  >
-                    <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
-                      Address
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
-                        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="24" cy="24" r="24" fill="#FAE9E9" fillOpacity="0.08"/>
-                          <path d="M25.1691 13.3828C19.9301 13.3828 15.668 17.6449 15.668 22.8839C15.668 28.4538 20.8422 31.8719 24.2659 34.1332L24.8583 34.5267C24.9522 34.5893 25.0607 34.6206 25.168 34.6206C25.2753 34.6206 25.3837 34.5893 25.4776 34.5267L26.07 34.1332C29.4938 31.8719 34.668 28.4538 34.668 22.8839C34.6702 17.6449 30.4081 13.3828 25.1691 13.3828ZM25.1691 25.6784C23.6254 25.6784 22.3746 24.4276 22.3746 22.8839C22.3746 21.3403 23.6254 20.0895 25.1691 20.0895C26.7127 20.0895 27.9635 21.3403 27.9635 22.8839C27.9635 24.4276 26.7127 25.6784 25.1691 25.6784Z" fill="url(#ctLocationGrad)" fillOpacity="0.8"/>
-                          <defs>
-                            <linearGradient id="ctLocationGrad" x1="35.924" y1="24.0017" x2="15.668" y2="24.0079" gradientUnits="userSpaceOnUse">
-                              <stop stopColor="#3770FD"/>
-                              <stop offset="0.5" stopColor="#2FB8DC"/>
-                              <stop offset="1" stopColor="#00E19A"/>
-                            </linearGradient>
-                          </defs>
-                        </svg>
+                    {/* Address */}
+                    <div
+                      className="rounded-xl p-4"
+                      style={{
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid rgba(255,255,255,0.06)",
+                      }}
+                    >
+                      <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
+                        Address
                       </div>
-                      <span className="text-gray-300 text-sm leading-relaxed">
-                        7160 Squirebeam Dr, ste 80 # 350,
+                      <div className="flex items-start gap-3">
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
+                          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="24" fill="#FAE9E9" fillOpacity="0.08"/>
+                            <path d="M25.1691 13.3828C19.9301 13.3828 15.668 17.6449 15.668 22.8839C15.668 28.4538 20.8422 31.8719 24.2659 34.1332L24.8583 34.5267C24.9522 34.5893 25.0607 34.6206 25.168 34.6206C25.2753 34.6206 25.3837 34.5893 25.4776 34.5267L26.07 34.1332C29.4938 31.8719 34.668 28.4538 34.668 22.8839C34.6702 17.6449 30.4081 13.3828 25.1691 13.3828ZM25.1691 25.6784C23.6254 25.6784 22.3746 24.4276 22.3746 22.8839C22.3746 21.3403 23.6254 20.0895 25.1691 20.0895C26.7127 20.0895 27.9635 21.3403 27.9635 22.8839C27.9635 24.4276 26.7127 25.6784 25.1691 25.6784Z" fill="url(#ctLocationGrad)" fillOpacity="0.8"/>
+                            <defs>
+                              <linearGradient id="ctLocationGrad" x1="35.924" y1="24.0017" x2="15.668" y2="24.0079" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#3770FD"/>
+                                <stop offset="0.5" stopColor="#2FB8DC"/>
+                                <stop offset="1" stopColor="#00E19A"/>
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                        </div>
+                        <span className="text-gray-300 text-sm leading-relaxed">
+                          7160 Squirebeam Dr, ste 80 # 350,
+                          <br />
+                          Sterling, VA 20166
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Service Hours */}
+                    <div
+                      className="rounded-xl p-4"
+                      style={{
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid rgba(255,255,255,0.06)",
+                      }}
+                    >
+                      <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
+                        Service Hours :
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        Monday - Friday 9AM - EST
                         <br />
-                        Sterling, VA 20166
-                      </span>
+                        Saturday 9AM - 5 PM EST
+                      </p>
                     </div>
-                  </div>
 
-                  {/* Service Hours */}
-                  <div
-                    className="rounded-xl p-4"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                    }}
-                  >
-                    <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
-                      Service Hours :
+                    {/* Support 24/7 */}
+                    <div
+                      className="rounded-xl p-4"
+                      style={{
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid rgba(255,255,255,0.06)",
+                      }}
+                    >
+                      <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
+                        Support 24/7
+                      </div>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        Our experts are available around the clock by email
+                        and live chat.
+                      </p>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Monday - Friday 9AM - EST
-                      <br />
-                      Saturday 9AM - 5 PM EST
-                    </p>
-                  </div>
-
-                  {/* Support 24/7 */}
-                  <div
-                    className="rounded-xl p-4"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                    }}
-                  >
-                    <div className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-2">
-                      Support 24/7
-                    </div>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      Our experts are available around the clock by email
-                      and live chat.
-                    </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Right - Contact Form */}
-              <div className="p-7 md:p-9 border-t lg:border-t-0 border-white/8">
-                <h2 className="text-white text-xl font-bold mb-6">
-                  Request Your Consultation
-                </h2>
+                {/* Right - Contact Form */}
+                <div className="p-7 md:p-9 border-t lg:border-t-0 border-white/8">
+                  <h2 className="text-white text-xl font-bold mb-6">
+                    Request Your Consultation
+                  </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  {/* First Name */}
-                  <div>
-                    <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      placeholder="Enter your name"
-                      className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-[#00d4aa]/40 transition-colors"
-                    />
-                  </div>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* First Name */}
+                    <div>
+                      <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        placeholder="Enter your name"
+                        className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-[#00d4aa]/40 transition-colors"
+                      />
+                    </div>
 
-                  {/* Email */}
-                  <div>
-                    <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Enter your email"
-                      className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-[#00d4aa]/40 transition-colors"
-                    />
-                  </div>
+                    {/* Email */}
+                    <div>
+                      <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Enter your email"
+                        className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-[#00d4aa]/40 transition-colors"
+                      />
+                    </div>
 
-                  {/* Business Name */}
-                  <div>
-                    <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
-                      Business Name
-                    </label>
-                    <input
-                      type="text"
-                      name="businessName"
-                      value={formData.businessName}
-                      onChange={handleChange}
-                      placeholder="Your company name"
-                      className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-[#00d4aa]/40 transition-colors"
-                    />
-                  </div>
+                    {/* Business Name */}
+                    <div>
+                      <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
+                        Business Name
+                      </label>
+                      <input
+                        type="text"
+                        name="businessName"
+                        value={formData.businessName}
+                        onChange={handleChange}
+                        placeholder="Your company name"
+                        className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-[#00d4aa]/40 transition-colors"
+                      />
+                    </div>
 
-                  {/* Service dropdown */}
-                  <div>
-                    <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
-                      What kind of service are you looking for?
-                    </label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00d4aa]/40 transition-colors appearance-none"
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "right 16px center",
-                      }}
-                    >
-                      <option value="" className="bg-[#0b1120]">
+                    {/* Service dropdown */}
+                    <div>
+                      <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
                         What kind of service are you looking for?
-                      </option>
-                      <option value="audit" className="bg-[#0b1120]">
-                        Accessibility Audit
-                      </option>
-                      <option value="remediation" className="bg-[#0b1120]">
-                        Remediation
-                      </option>
-                      <option value="monitoring" className="bg-[#0b1120]">
-                        Continuous Monitoring
-                      </option>
-                      <option value="consultation" className="bg-[#0b1120]">
-                        Compliance Consultation
-                      </option>
-                    </select>
-                  </div>
+                      </label>
+                      <select
+                        name="service"
+                        value={formData.service}
+                        onChange={handleChange}
+                        className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00d4aa]/40 transition-colors appearance-none"
+                        style={{
+                          backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "right 16px center",
+                        }}
+                      >
+                        <option value="" className="bg-[#0b1120]">
+                          What kind of service are you looking for?
+                        </option>
+                        <option value="audit" className="bg-[#0b1120]">
+                          Accessibility Audit
+                        </option>
+                        <option value="remediation" className="bg-[#0b1120]">
+                          Remediation
+                        </option>
+                        <option value="monitoring" className="bg-[#0b1120]">
+                          Continuous Monitoring
+                        </option>
+                        <option value="consultation" className="bg-[#0b1120]">
+                          Compliance Consultation
+                        </option>
+                      </select>
+                    </div>
 
-                  {/* Message */}
-                  <div>
-                    <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
-                      Anything else you&apos;d like to share?
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Anything else you'd like to share?"
-                      rows={4}
-                      className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-[#00d4aa]/40 transition-colors resize-none"
-                    />
-                  </div>
+                    {/* Message */}
+                    <div>
+                      <label className="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">
+                        Anything else you&apos;d like to share?
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Anything else you'd like to share?"
+                        rows={4}
+                        className="w-full bg-[#0b1120] border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-[#00d4aa]/40 transition-colors resize-none"
+                      />
+                    </div>
 
-                  {/* Submit */}
-                  <div className="flex items-center justify-end gap-4">
-                    <button
-                      type="submit"
-                      className="flex items-center gap-2 text-white text-sm font-semibold px-7 py-3 rounded-full hover:opacity-90 transition-opacity"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #00d4aa, #0088cc)",
-                      }}
-                    >
-                      Submit Inquiry
-                    </button>
-                  </div>
-                  <p className="text-gray-500 text-xs text-right">
-                    Our team will respond within one business day.
-                  </p>
-                </form>
+                    {/* Submit */}
+                    <div className="flex items-center justify-end gap-4">
+                      <button
+                        type="submit"
+                        className="flex items-center gap-2 text-white text-sm font-semibold px-7 py-3 rounded-full hover:opacity-90 transition-opacity"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #00d4aa, #0088cc)",
+                        }}
+                      >
+                        Submit Inquiry
+                      </button>
+                    </div>
+                    <p className="text-gray-500 text-xs text-right">
+                      Our team will respond within one business day.
+                    </p>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* ====== HELP SECTION ====== */}
         <div className="container mx-auto pb-24 md:pb-32">
           {/* Section Header */}
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl lg:text-[36px] font-bold text-white leading-tight">
-              Have Questions? We&apos;re Here to Help!
-            </h2>
-          </div>
+          <ScrollReveal animation="fade-in-up">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl lg:text-[36px] font-bold text-white leading-tight">
+                Have Questions? We&apos;re Here to Help!
+              </h2>
+            </div>
+          </ScrollReveal>
 
           {/* Cards Grid */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {helpCards.map((card) => (
-              <div
-                key={card.title}
-                className="bg-white rounded-2xl p-6 border border-[#d5f0ea] flex flex-col"
-              >
-                {/* Icon */}
+          <ScrollReveal animation="fade-in-up" delay={200} stagger>
+            <div className="grid md:grid-cols-3 gap-6">
+              {helpCards.map((card) => (
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ background: "rgba(0,212,170,0.10)" }}
+                  key={card.title}
+                  className="bg-white rounded-2xl p-6 border border-[#d5f0ea] flex flex-col"
                 >
-                  {card.icon}
+                  {/* Icon */}
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                    style={{ background: "rgba(0,212,170,0.10)" }}
+                  >
+                    {card.icon}
+                  </div>
+
+                  <h3 className="text-[#0b0f1a] text-lg font-bold mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-500 text-[14px] leading-relaxed mb-5 flex-1">
+                    {card.description}
+                  </p>
+
+                  {/* CTA */}
+                  <button
+                    className="flex items-center gap-2 text-white text-[13px] font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity w-fit"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #00d4aa, #0088cc)",
+                    }}
+                  >
+                    {card.cta}
+                  </button>
                 </div>
-
-                <h3 className="text-[#0b0f1a] text-lg font-bold mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-gray-500 text-[14px] leading-relaxed mb-5 flex-1">
-                  {card.description}
-                </p>
-
-                {/* CTA */}
-                <button
-                  className="flex items-center gap-2 text-white text-[13px] font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity w-fit"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #00d4aa, #0088cc)",
-                  }}
-                >
-                  {card.cta}
-                </button>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

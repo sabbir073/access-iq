@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import AnimatedGradient from "../AnimatedGradient";
+import ScrollReveal from "../ScrollReveal";
 
 const plans = [
   {
@@ -128,48 +129,56 @@ const PricingPageContent = () => {
         <div className="pt-[120px] pb-16">
           <div className="container mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-7">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="none" stroke="#00d4aa" strokeWidth="1.5" />
-                <path d="M9 12l2 2 4-4" stroke="#00d4aa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <span className="text-white text-[13px] font-medium">Transparent Pricing</span>
-            </div>
+            <ScrollReveal animation="fade-in-up" delay={100}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-7">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="none" stroke="#00d4aa" strokeWidth="1.5" />
+                  <path d="M9 12l2 2 4-4" stroke="#00d4aa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="text-white text-[13px] font-medium">Transparent Pricing</span>
+              </div>
+            </ScrollReveal>
 
-            <h1 className="text-[34px] md:text-[42px] lg:text-[50px] font-bold leading-[1.15] text-white mb-6 tracking-tight max-w-3xl mx-auto">
-              Compliance That Costs{" "}
-              <br className="hidden md:block" />
-              Less Than One Lawsuit
-            </h1>
+            <ScrollReveal animation="fade-in-up" delay={200}>
+              <h1 className="text-[34px] md:text-[42px] lg:text-[50px] font-bold leading-[1.15] text-white mb-6 tracking-tight max-w-3xl mx-auto">
+                Compliance That Costs{" "}
+                <br className="hidden md:block" />
+                Less Than One Lawsuit
+              </h1>
+            </ScrollReveal>
 
-            <p className="text-gray-300 text-base max-w-xl mx-auto mb-10 leading-relaxed">
-              Expert guidance through every accessibility regulation — from federal contracts to Title III lawsuits. Achieve sustainable compliance with comprehensive standards coverage.
-            </p>
+            <ScrollReveal animation="fade-in-up" delay={300}>
+              <p className="text-gray-300 text-base max-w-xl mx-auto mb-10 leading-relaxed">
+                Expert guidance through every accessibility regulation — from federal contracts to Title III lawsuits. Achieve sustainable compliance with comprehensive standards coverage.
+              </p>
+            </ScrollReveal>
 
             {/* Feature badges */}
-            <div className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
-              {[
-                "Manual Testing",
-                "Real User Scenarios",
-                "No Overlays",
-                "No False Scenarios",
-              ].map((label) => (
-                <div key={label} className="flex items-center gap-2">
-                  <div
-                    className="w-7 h-7 rounded-full flex items-center justify-center"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,136,204,0.15))",
-                      border: "1px solid rgba(0,212,170,0.2)",
-                    }}
-                  >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                      <path d="M5 13l4 4L19 7" stroke="#00d4aa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+            <ScrollReveal animation="fade-in-up" delay={400}>
+              <div className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
+                {[
+                  "Manual Testing",
+                  "Real User Scenarios",
+                  "No Overlays",
+                  "No False Scenarios",
+                ].map((label) => (
+                  <div key={label} className="flex items-center gap-2">
+                    <div
+                      className="w-7 h-7 rounded-full flex items-center justify-center"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(0,212,170,0.15), rgba(0,136,204,0.15))",
+                        border: "1px solid rgba(0,212,170,0.2)",
+                      }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="#00d4aa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-300 text-sm font-medium">{label}</span>
                   </div>
-                  <span className="text-gray-300 text-sm font-medium">{label}</span>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </div>
 
@@ -184,86 +193,90 @@ const PricingPageContent = () => {
           />
 
           <div className="container mx-auto relative">
-            <div className="text-center mb-14">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-6">
-                <span className="text-[#00d4aa] text-[13px] font-medium">Pricing</span>
-              </div>
+            <ScrollReveal animation="fade-in-up">
+              <div className="text-center mb-14">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-6">
+                  <span className="text-[#00d4aa] text-[13px] font-medium">Pricing</span>
+                </div>
 
-              <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight mb-5">
-                Accessibility &amp; Compliance
-                <br />
-                Plans for Every Business
-              </h2>
-              <p className="text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
-                Expert audits, verified fixes, and continuous monitoring for ADA and WCAG compliance.
-              </p>
-            </div>
+                <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight mb-5">
+                  Accessibility &amp; Compliance
+                  <br />
+                  Plans for Every Business
+                </h2>
+                <p className="text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
+                  Expert audits, verified fixes, and continuous monitoring for ADA and WCAG compliance.
+                </p>
+              </div>
+            </ScrollReveal>
 
             {/* Pricing Cards Grid */}
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
-              {plans.map((plan, index) => (
-                <div
-                  key={index}
-                  className="relative rounded-2xl flex flex-col"
-                  style={
-                    plan.featured
-                      ? {
-                          background: "linear-gradient(180deg, #111d2e 0%, #0c1622 100%)",
-                          border: "1px solid rgba(0,212,170,0.25)",
-                          boxShadow: "0 0 30px rgba(0,212,170,0.08), 0 20px 60px rgba(0,0,0,0.3)",
-                        }
-                      : {
-                          background: "linear-gradient(180deg, #111d2e 0%, #0c1622 100%)",
-                          border: "1px solid rgba(255,255,255,0.08)",
-                        }
-                  }
-                >
-                  {plan.featured && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                      <div
-                        className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white text-xs font-semibold"
-                        style={{ background: "linear-gradient(135deg, #00d4aa, #0088cc)" }}
-                      >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#FFD700" />
-                        </svg>
-                        Recommended
-                      </div>
-                    </div>
-                  )}
-
-                  <div className={`p-7 flex flex-col flex-1 ${plan.featured ? "pt-9" : ""}`}>
-                    <div className="text-[#0088cc] text-xs font-semibold tracking-wider uppercase mb-4">{plan.label}</div>
-                    <h3 className="text-white text-xl font-bold mb-4">{plan.title}</h3>
-                    <div className="flex items-baseline gap-1 mb-3">
-                      <span className="text-white text-4xl font-bold">{plan.price}</span>
-                      {plan.period && <span className="text-gray-400 text-sm font-medium">{plan.period}</span>}
-                    </div>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">{plan.description}</p>
-                    <ul className="space-y-3 mb-8 flex-1">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0">
-                            <path d="M5 13l4 4L19 7" stroke="#00d4aa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <ScrollReveal animation="fade-in-up" delay={200} stagger>
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
+                {plans.map((plan, index) => (
+                  <div
+                    key={index}
+                    className="relative rounded-2xl flex flex-col"
+                    style={
+                      plan.featured
+                        ? {
+                            background: "linear-gradient(180deg, #111d2e 0%, #0c1622 100%)",
+                            border: "1px solid rgba(0,212,170,0.25)",
+                            boxShadow: "0 0 30px rgba(0,212,170,0.08), 0 20px 60px rgba(0,0,0,0.3)",
+                          }
+                        : {
+                            background: "linear-gradient(180deg, #111d2e 0%, #0c1622 100%)",
+                            border: "1px solid rgba(255,255,255,0.08)",
+                          }
+                    }
+                  >
+                    {plan.featured && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                        <div
+                          className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white text-xs font-semibold"
+                          style={{ background: "linear-gradient(135deg, #00d4aa, #0088cc)" }}
+                        >
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#FFD700" />
                           </svg>
-                          <span className="text-gray-300 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <button
-                      className="w-full flex items-center justify-center gap-2 text-sm font-semibold py-3 rounded-full transition-opacity hover:opacity-90"
-                      style={
-                        plan.featured
-                          ? { background: "linear-gradient(135deg, #00d4aa, #0088cc)", color: "white" }
-                          : { background: "transparent", border: "1px solid rgba(0,212,170,0.3)", color: "#00d4aa" }
-                      }
-                    >
-                      See Full Plan
-                    </button>
+                          Recommended
+                        </div>
+                      </div>
+                    )}
+
+                    <div className={`p-7 flex flex-col flex-1 ${plan.featured ? "pt-9" : ""}`}>
+                      <div className="text-[#0088cc] text-xs font-semibold tracking-wider uppercase mb-4">{plan.label}</div>
+                      <h3 className="text-white text-xl font-bold mb-4">{plan.title}</h3>
+                      <div className="flex items-baseline gap-1 mb-3">
+                        <span className="text-white text-4xl font-bold">{plan.price}</span>
+                        {plan.period && <span className="text-gray-400 text-sm font-medium">{plan.period}</span>}
+                      </div>
+                      <p className="text-gray-400 text-sm leading-relaxed mb-6">{plan.description}</p>
+                      <ul className="space-y-3 mb-8 flex-1">
+                        {plan.features.map((feature, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0">
+                              <path d="M5 13l4 4L19 7" stroke="#00d4aa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span className="text-gray-300 text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <button
+                        className="w-full flex items-center justify-center gap-2 text-sm font-semibold py-3 rounded-full transition-opacity hover:opacity-90"
+                        style={
+                          plan.featured
+                            ? { background: "linear-gradient(135deg, #00d4aa, #0088cc)", color: "white" }
+                            : { background: "transparent", border: "1px solid rgba(0,212,170,0.3)", color: "#00d4aa" }
+                        }
+                      >
+                        See Full Plan
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </div>
 
@@ -280,45 +293,49 @@ const PricingPageContent = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(0,212,170,0.2), rgba(0,136,204,0.2), transparent)" }} />
 
           <div className="container mx-auto relative">
-            <div className="text-center mb-14">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-6">
-                <span className="text-[#00d4aa] text-[13px] font-medium">Enhance Your Plan</span>
-              </div>
-
-              <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight mb-5">Add-Ons</h2>
-              <p className="text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
-                All add-ons are delivered by senior accessibility experts and aligned with WCAG 2.1 AA &amp; ADA requirements.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              {addOns.map((addon, index) => (
-                <div
-                  key={index}
-                  className="rounded-2xl p-6 flex flex-col text-center"
-                  style={{
-                    background: "linear-gradient(180deg, #111d2e 0%, #0c1622 100%)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                  }}
-                >
-                  <div className="flex justify-center mb-5">
-                    <div className="w-14 h-14 rounded-xl flex items-center justify-center" style={{ background: "rgba(0,212,170,0.10)" }}>
-                      {addon.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-white text-lg font-bold mb-1">{addon.title}</h3>
-                  <p className="text-[#0088cc] text-sm font-medium underline underline-offset-2 mb-3">{addon.subtitle}</p>
-                  <p className="text-gray-400 text-[13px] leading-relaxed mb-4 flex-1">{addon.description}</p>
-                  {addon.price && <div className="text-white text-2xl font-bold mb-5">{addon.price}</div>}
-                  <button
-                    className="w-full flex items-center justify-center gap-2 text-white text-[13px] font-semibold py-2.5 rounded-full hover:opacity-90 transition-opacity"
-                    style={{ background: "linear-gradient(135deg, #00d4aa, #0088cc)" }}
-                  >
-                    Request now
-                  </button>
+            <ScrollReveal animation="fade-in-up">
+              <div className="text-center mb-14">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00d4aa]/20 bg-[#00d4aa]/[0.06] mb-6">
+                  <span className="text-[#00d4aa] text-[13px] font-medium">Enhance Your Plan</span>
                 </div>
-              ))}
-            </div>
+
+                <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight mb-5">Add-Ons</h2>
+                <p className="text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
+                  All add-ons are delivered by senior accessibility experts and aligned with WCAG 2.1 AA &amp; ADA requirements.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-in-up" delay={200} stagger>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                {addOns.map((addon, index) => (
+                  <div
+                    key={index}
+                    className="rounded-2xl p-6 flex flex-col text-center"
+                    style={{
+                      background: "linear-gradient(180deg, #111d2e 0%, #0c1622 100%)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <div className="flex justify-center mb-5">
+                      <div className="w-14 h-14 rounded-xl flex items-center justify-center" style={{ background: "rgba(0,212,170,0.10)" }}>
+                        {addon.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-white text-lg font-bold mb-1">{addon.title}</h3>
+                    <p className="text-[#0088cc] text-sm font-medium underline underline-offset-2 mb-3">{addon.subtitle}</p>
+                    <p className="text-gray-400 text-[13px] leading-relaxed mb-4 flex-1">{addon.description}</p>
+                    {addon.price && <div className="text-white text-2xl font-bold mb-5">{addon.price}</div>}
+                    <button
+                      className="w-full flex items-center justify-center gap-2 text-white text-[13px] font-semibold py-2.5 rounded-full hover:opacity-90 transition-opacity"
+                      style={{ background: "linear-gradient(135deg, #00d4aa, #0088cc)" }}
+                    >
+                      Request now
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </div>
 
@@ -333,33 +350,35 @@ const PricingPageContent = () => {
           />
 
           <div className="container mx-auto relative">
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,212,170,0.15)" }}>
-                <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0a8a7a 0%, #0c7a8a 20%, #1565a0 50%, #2855a0 70%, #4060b0 100%)" }} />
-                <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ background: "radial-gradient(ellipse at 0% 50%, rgba(0,212,170,0.3) 0%, transparent 50%)" }} />
-                <div className="absolute top-0 right-0 w-full h-full pointer-events-none" style={{ background: "radial-gradient(ellipse at 100% 0%, rgba(80,120,200,0.3) 0%, transparent 50%)" }} />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[75%] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 8%, rgba(255,255,255,0.35) 18%, rgba(255,255,255,0.15) 32%, rgba(255,255,255,0.05) 48%, transparent 65%)", filter: "blur(8px)" }} />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[45%] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 20%, rgba(255,255,255,0.1) 45%, transparent 65%)", filter: "blur(5px)" }} />
-                <div className="absolute -top-6 -right-12 md:-top-4 md:-right-10 pointer-events-none" style={{ opacity: 0.08, transform: "rotate(-30deg)" }}>
-                  <Image src="/images/favicon-icon.png" alt="" width={200} height={200} className="w-[160px] h-[160px] md:w-[200px] md:h-[200px]" />
+            <ScrollReveal animation="scale-in" duration={800}>
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,212,170,0.15)" }}>
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0a8a7a 0%, #0c7a8a 20%, #1565a0 50%, #2855a0 70%, #4060b0 100%)" }} />
+                  <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ background: "radial-gradient(ellipse at 0% 50%, rgba(0,212,170,0.3) 0%, transparent 50%)" }} />
+                  <div className="absolute top-0 right-0 w-full h-full pointer-events-none" style={{ background: "radial-gradient(ellipse at 100% 0%, rgba(80,120,200,0.3) 0%, transparent 50%)" }} />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[75%] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 8%, rgba(255,255,255,0.35) 18%, rgba(255,255,255,0.15) 32%, rgba(255,255,255,0.05) 48%, transparent 65%)", filter: "blur(8px)" }} />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[45%] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 20%, rgba(255,255,255,0.1) 45%, transparent 65%)", filter: "blur(5px)" }} />
+                  <div className="absolute -top-6 -right-12 md:-top-4 md:-right-10 pointer-events-none" style={{ opacity: 0.08, transform: "rotate(-30deg)" }}>
+                    <Image src="/images/favicon-icon.png" alt="" width={200} height={200} className="w-[160px] h-[160px] md:w-[200px] md:h-[200px]" />
+                  </div>
+                  <div className="relative z-10 px-8 md:px-16 py-14 md:py-16 text-center">
+                    <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold text-white mb-4 leading-tight whitespace-nowrap">
+                      Get Your Verified Accessibility Report Today
+                    </h2>
+                    <p className="text-white/85 text-base max-w-xl mx-auto mb-8">
+                      Ensure your site is WCAG ADA compliant and minimizes legal risk.
+                    </p>
+                    <button className="inline-flex items-center gap-2 bg-white text-[#0b1a2a] font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-colors text-sm cursor-pointer">
+                      Start Your Audit
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-                <div className="relative z-10 px-8 md:px-16 py-14 md:py-16 text-center">
-                  <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold text-white mb-4 leading-tight whitespace-nowrap">
-                    Get Your Verified Accessibility Report Today
-                  </h2>
-                  <p className="text-white/85 text-base max-w-xl mx-auto mb-8">
-                    Ensure your site is WCAG ADA compliant and minimizes legal risk.
-                  </p>
-                  <button className="inline-flex items-center gap-2 bg-white text-[#0b1a2a] font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-colors text-sm cursor-pointer">
-                    Start Your Audit
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                      <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                </div>
+                <div className="absolute bottom-0 left-0 w-full h-[50px] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(0,212,170,0.8) 0%, rgba(0,180,216,0.5) 10%, rgba(0,136,204,0.25) 25%, rgba(0,180,216,0.1) 45%, rgba(0,136,204,0.03) 65%, transparent 85%)", filter: "blur(8px)", transform: "translateY(100%)" }} />
               </div>
-              <div className="absolute bottom-0 left-0 w-full h-[50px] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(0,212,170,0.8) 0%, rgba(0,180,216,0.5) 10%, rgba(0,136,204,0.25) 25%, rgba(0,180,216,0.1) 45%, rgba(0,136,204,0.03) 65%, transparent 85%)", filter: "blur(8px)", transform: "translateY(100%)" }} />
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

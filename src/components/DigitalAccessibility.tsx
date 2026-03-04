@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import ScrollReveal from "./ScrollReveal";
 
 const testimonials = [
   {
@@ -62,6 +63,7 @@ const DigitalAccessibility = () => {
 
       <div className="container mx-auto">
         {/* Section Header - Title left, Description right */}
+        <ScrollReveal animation="fade-in-up">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-14">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight">
@@ -75,9 +77,11 @@ const DigitalAccessibility = () => {
             Track and improve your website&apos;s accessibility with real-time insights and comprehensive audits. We help you stay ahead of ADA &amp; WCAG compliance and eliminate legal risks.
           </p>
         </div>
+        </ScrollReveal>
 
         {/* Main Content - Chart left, Stats right */}
-        <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+        <ScrollReveal animation="fade-in-up" duration={800}>
+        <div className="grid lg:grid-cols-2 gap-6">
           {/* Left - Chart Image */}
           <div className="relative flex items-center">
             <Image
@@ -90,7 +94,7 @@ const DigitalAccessibility = () => {
           </div>
 
           {/* Right - Stat Cards */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 pb-14">
             {/* Top row - 2 cards */}
             <div className="grid grid-cols-2 gap-4 flex-1">
               <div
@@ -171,10 +175,12 @@ const DigitalAccessibility = () => {
             </div>
           </div>
         </div>
+        </ScrollReveal>
 
         {/* Expert Audit Section */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-28 mb-28">
           {/* Left Content */}
+          <ScrollReveal animation="fade-in-left">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight">
               Expert audit completed.
@@ -200,8 +206,10 @@ const DigitalAccessibility = () => {
               </svg>
             </button>
           </div>
+          </ScrollReveal>
 
           {/* Right - Certificate image */}
+          <ScrollReveal animation="fade-in-right" delay={300} duration={800}>
           <div className="relative">
             <Image
               src="/images/cert-image-new.png"
@@ -211,6 +219,7 @@ const DigitalAccessibility = () => {
               className="w-full h-auto scale-[1.3] origin-center"
             />
           </div>
+          </ScrollReveal>
         </div>
 
         {/* Spreading gradient light between Expert Audit and Testimonial */}
@@ -257,14 +266,17 @@ const DigitalAccessibility = () => {
         <div className="relative">
           {/* removed - glow moved to between sections */}
 
+          <ScrollReveal animation="fade-in-up">
           <div className="relative z-10 mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-tight">
               Trusted by{" "}
               <span className="gradient-text">industry Leaders</span>
             </h2>
           </div>
+          </ScrollReveal>
 
           {/* Testimonial Layout: Image left, Quote right */}
+          <ScrollReveal animation="fade-in-up" delay={200}>
           <div className="relative z-10 flex gap-8 lg:gap-10 items-stretch">
           {/* Left - Person Image (smaller) */}
           <div className="flex-shrink-0 relative overflow-hidden w-[280px]" style={{ borderRadius: "12px" }}>
@@ -324,9 +336,11 @@ const DigitalAccessibility = () => {
             </div>
           </div>
           </div>
+          </ScrollReveal>
         </div>
 
         {/* CTA Banner */}
+        <ScrollReveal animation="scale-in" duration={800}>
         <div className="mt-20 md:mt-28 relative">
           {/* The card */}
           <div className="relative rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,212,170,0.15)" }}>
@@ -373,6 +387,7 @@ const DigitalAccessibility = () => {
           <div className="cta-bottom-glow absolute bottom-0 left-0 w-full h-[50px] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(0,212,170,0.8) 0%, rgba(0,180,216,0.5) 10%, rgba(0,136,204,0.25) 25%, rgba(0,180,216,0.1) 45%, rgba(0,136,204,0.03) 65%, transparent 85%)", filter: "blur(8px)", transform: "translateY(100%)" }} />
           <div className="cta-bottom-glow-2 absolute bottom-0 left-0 w-full h-[40px] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(0,212,170,0.5) 0%, rgba(80,160,220,0.2) 20%, rgba(0,136,204,0.05) 45%, transparent 70%)", filter: "blur(15px)", transform: "translateY(120%)" }} />
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

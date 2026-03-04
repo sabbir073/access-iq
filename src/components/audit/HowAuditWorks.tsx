@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import ScrollReveal from "../ScrollReveal";
 
 const steps = [
   {
@@ -74,6 +77,7 @@ const HowAuditWorks = () => {
       <div className="py-16 md:py-24">
         <div className="container mx-auto">
           {/* Section Header */}
+          <ScrollReveal animation="fade-in-up">
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-[#0b0f1a] leading-tight">
               How Our Accessibility{" "}
@@ -83,10 +87,12 @@ const HowAuditWorks = () => {
               We prioritize the end-user pod and assistive technology targets.
             </p>
           </div>
+          </ScrollReveal>
 
           {/* Main content grid */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 mt-14">
             {/* Left - Steps as cards */}
+            <ScrollReveal animation="fade-in-left" duration={800} stagger>
             <div className="space-y-5">
               {steps.map((step, index) => (
                 <div
@@ -113,8 +119,10 @@ const HowAuditWorks = () => {
                 </div>
               ))}
             </div>
+            </ScrollReveal>
 
             {/* Right - Trust card (white/light) */}
+            <ScrollReveal animation="fade-in-right" delay={300} duration={800}>
             <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-200 h-fit">
               <h3 className="text-[#0b0f1a] text-xl md:text-2xl font-bold mb-6 leading-tight">
                 Trusted by leading legal and compliance teams
@@ -169,6 +177,7 @@ const HowAuditWorks = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           </div>
 
           {/* Bottom CTA */}
