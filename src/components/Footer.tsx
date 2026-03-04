@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="flex items-start gap-8 lg:gap-12 flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/logo-dark.png"
+                src="/images/logos/accessiq-logo.png"
                 alt="AccessIQ"
                 width={300}
                 height={70}

@@ -72,7 +72,7 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo-dark.png"
+              src="/images/logos/accessiq-logo.png"
               alt="AccessIQ"
               width={140}
               height={36}
@@ -174,7 +174,7 @@ const Header = () => {
                 }}
               >
                 <Image
-                  src="/images/logo-dark.png"
+                  src="/images/logos/accessiq-logo.png"
                   alt="AccessIQ"
                   width={140}
                   height={36}
