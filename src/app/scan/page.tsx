@@ -1,0 +1,102 @@
+"use client";
+
+import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ScanHero from "@/components/scan/ScanHero";
+import WhyAccessibility from "@/components/scan/WhyAccessibility";
+import CaseForAccessibility from "@/components/scan/CaseForAccessibility";
+import ScanningView from "@/components/scan/ScanningView";
+import ScanResults from "@/components/scan/ScanResults";
+
+type ScanState = "idle" | "scanning" | "complete" | "error";
+
+interface Violation {
+  id: string;
+  description: string;
+  help: string;
+  helpUrl: string;
+  impact: "critical" | "serious" | "moderate" | "minor" | null;
+  nodes: Array<{ html: string; target: string[] }>;
+}
+
+interface ScanResultsData {
+  url: string;
+  scannedAt: string;
+  score: number;
+  violations: Violation[];
+  passes: number;
+  incomplete: number;
+}
+
+export default function ScanPage() {
+  const [scanState, setScanState] = useState<ScanState>("idle");
+  const [currentUrl, setCurrentUrl] = useState("");
+  const [results, setResults] = useState<ScanResultsData | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
+
+  const handleScan = async (url: string) => {
+    setCurrentUrl(url);
+    setScanState("scanning");
+    setErrorMessage(undefined);
+
+    try {
+      const response = await fetch("/api/scan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Scan failed. Please try again.");
+      }
+
+      setResults(data);
+      setScanState("complete");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Scan failed. Please try again.";
+      setErrorMessage(message);
+      setScanState("error");
+    }
+  };
+
+  const handleRescan = () => {
+    setScanState("idle");
+    setResults(null);
+    setErrorMessage(undefined);
+    setCurrentUrl("");
+  };
+
+  if (scanState === "scanning") {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <ScanningView url={currentUrl} />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (scanState === "complete" && results) {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <ScanResults results={results} onRescan={handleRescan} />
+        <Footer />
+      </div>
+    );
+  }
+
+  // idle or error
+  return (
+    <div className="min-h-screen">
+      <Header />
+      <ScanHero onScan={handleScan} error={errorMessage} />
+      <WhyAccessibility />
+      <CaseForAccessibility />
+      <Footer />
+    </div>
+  );
+}
