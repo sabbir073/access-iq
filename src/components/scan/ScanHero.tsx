@@ -13,21 +13,27 @@ interface ScanHeroProps {
 const ScanHero = ({ onScan, error }: ScanHeroProps) => {
   const [url, setUrl] = useState("");
   const [validationError, setValidationError] = useState("");
+  const [showMethodology, setShowMethodology] = useState(false);
 
   const validateAndSubmit = () => {
-    const trimmed = url.trim();
+    let trimmed = url.trim();
     if (!trimmed) {
       setValidationError("Please enter a website URL.");
       return;
     }
+    // Auto-prepend https:// if no protocol present
     if (!/^https?:\/\//i.test(trimmed)) {
-      setValidationError("URL must start with http:// or https://");
-      return;
+      trimmed = "https://" + trimmed;
     }
+    // Validate it's a real URL with a hostname containing a dot (any TLD)
     try {
-      new URL(trimmed);
+      const parsed = new URL(trimmed);
+      if (!parsed.hostname.includes(".")) {
+        setValidationError("Please enter a valid domain (e.g. example.com)");
+        return;
+      }
     } catch {
-      setValidationError("Please enter a valid URL (e.g. https://example.com)");
+      setValidationError("Please enter a valid domain (e.g. example.com)");
       return;
     }
     setValidationError("");
@@ -143,14 +149,97 @@ const ScanHero = ({ onScan, error }: ScanHeroProps) => {
           </div>
         </ScrollReveal>
 
-        {/* Sub-link */}
-        <ScrollReveal animation="fade-in-up" delay={500}>
-          <a
-            href="#why-accessibility"
-            className="text-gray-200 hover:text-white transition-colors"
+        {/* Sub-link toggle */}
+        <ScrollReveal animation="fade-in-up" delay={500} className="w-full flex flex-col items-center px-4">
+          <button
+            onClick={() => setShowMethodology((v) => !v)}
+            className="text-gray-200 hover:text-white transition-colors flex items-center gap-1.5 mb-5"
           >
             <span className="text-[15px] md:text-[16px]">What&apos;s included in the analysis?</span>
-          </a>
+            <svg
+              width="10" height="7" viewBox="0 0 10 7" fill="none"
+              className="transition-transform duration-300"
+              style={{ transform: showMethodology ? "rotate(180deg)" : "rotate(0deg)" }}
+            >
+              <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {/* Methodology panel — animated */}
+          <div
+            className="w-full max-w-[680px] overflow-hidden"
+            style={{
+              maxHeight: showMethodology ? "600px" : "0px",
+              opacity: showMethodology ? 1 : 0,
+              marginBottom: showMethodology ? "16px" : "0px",
+              transition: "max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease, margin-bottom 0.45s ease",
+            }}
+          >
+            <div className="rounded-2xl p-[1.5px]" style={{ background: "linear-gradient(135deg, #00d4aa, #0088cc)" }}>
+              <div className="rounded-2xl bg-white px-7 py-7">
+                {/* Header — slides in */}
+                <p
+                  className="text-gray-500 text-[15px] font-medium mb-2"
+                  style={{
+                    transform: showMethodology ? "translateY(0)" : "translateY(-8px)",
+                    opacity: showMethodology ? 1 : 0,
+                    transition: "transform 0.35s ease 0.08s, opacity 0.35s ease 0.08s",
+                  }}
+                >
+                  Scoring methodology
+                </p>
+                <h3
+                  className="text-[#0b0f1a] text-[22px] font-bold mb-2"
+                  style={{
+                    transform: showMethodology ? "translateY(0)" : "translateY(-8px)",
+                    opacity: showMethodology ? 1 : 0,
+                    transition: "transform 0.35s ease 0.12s, opacity 0.35s ease 0.12s",
+                  }}
+                >
+                  How we calculate your accessibility score
+                </h3>
+                <p
+                  className="text-[14px] mb-5"
+                  style={{
+                    color: "#00a88c",
+                    transform: showMethodology ? "translateY(0)" : "translateY(-8px)",
+                    opacity: showMethodology ? 1 : 0,
+                    transition: "transform 0.35s ease 0.16s, opacity 0.35s ease 0.16s",
+                  }}
+                >
+                  We analyze your site according to WCAG 2.1 level AA standards, evaluating:
+                </p>
+
+                {/* 2×3 grid — each item staggers in */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    "Color contrast and readability",
+                    "Form labels and error handling",
+                    "Semantic structure and ARIA Labels",
+                    "Keyboard navigation and focus indicators",
+                    "Alternative text for images",
+                    "Screen reader compatibility",
+                  ].map((item, i) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-xl px-4 py-3"
+                      style={{
+                        background: "#f4f6f9",
+                        transform: showMethodology ? "translateY(0)" : "translateY(10px)",
+                        opacity: showMethodology ? 1 : 0,
+                        transition: `transform 0.35s ease ${0.2 + i * 0.05}s, opacity 0.35s ease ${0.2 + i * 0.05}s`,
+                      }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 mt-[2px]">
+                        <path d="M2 7l3.5 3.5L12 3" stroke="#00d4aa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span className="text-[#0b0f1a] text-[13px] text-left">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </ScrollReveal>
       </div>
     </section>

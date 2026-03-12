@@ -56,7 +56,12 @@ export default function ScanPage() {
       setResults(data);
       setScanState("complete");
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Scan failed. Please try again.";
+      const raw = err instanceof Error ? err.message : "";
+      // Never show raw technical errors — sanitize to user-friendly messages
+      const message =
+        raw && /timeout|not be reached|not be found|blocking|different URL|could not be scanned/i.test(raw)
+          ? raw
+          : "This website could not be scanned. Please try again or enter a different URL.";
       setErrorMessage(message);
       setScanState("error");
     }

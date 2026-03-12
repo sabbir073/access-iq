@@ -99,7 +99,7 @@ const ScanningView = ({ url }: ScanningViewProps) => {
       `}</style>
 
       {/* ── DARK HERO (same as ScanHero) ── */}
-      <section className="relative overflow-hidden bg-[#0a0e1a]" style={{ minHeight: "calc(100vh - 88px)" }}>
+      <section className="relative overflow-hidden bg-[#0a0e1a]">
         <AnimatedGradient />
 
         {/* Grid pattern */}
@@ -116,11 +116,11 @@ const ScanningView = ({ url }: ScanningViewProps) => {
           }}
         />
 
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 pb-28" style={{ minHeight: "calc(100vh - 88px)" }}>
+        <div className="relative z-10 flex flex-col items-center text-center px-4 pt-[88px] pb-8">
 
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-10"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-4"
             style={{
               background: "rgba(8,12,24,0.8)",
               border: "1px solid rgba(255,255,255,0.18)",
@@ -134,18 +134,18 @@ const ScanningView = ({ url }: ScanningViewProps) => {
           </div>
 
           {/* Analyzing text */}
-          <p className="text-white text-[18px] md:text-[20px] font-medium mb-2">
+          <p className="text-white text-[18px] md:text-[20px] font-medium mb-1">
             Analyzing your website
           </p>
 
           {/* URL */}
-          <p className="text-gray-300 text-[14px] md:text-[15px] mb-8">
+          <p className="text-gray-300 text-[14px] md:text-[15px] mb-4">
             Scanning: <span className="text-white">{url}</span>
           </p>
 
           {/* Timer */}
           <div className="text-white font-bold font-mono tracking-widest leading-none"
-            style={{ fontSize: "clamp(52px, 8vw, 80px)" }}>
+            style={{ fontSize: "clamp(36px, 6vw, 56px)" }}>
             {formatTime(elapsed)}
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import AnimatedGradient from "../AnimatedGradient";
 
 interface Violation {
@@ -34,26 +35,34 @@ const IMPACT_STYLE: Record<string, { borderColor: string; iconColor: string; bad
 
 const LAWS = [
   {
+    showFlag: true,
+    borderColor: "#1e3a5f",
     badges: [{ text: "ADA", bg: "#1e3a5f", color: "#fff" }, { text: "Europe", bg: "transparent", color: "#1e3a5f", border: "#1e3a5f" }],
-    title: <>ADA <span className="font-normal text-gray-500 text-[14px]">Americans with</span> <span className="font-bold">Disabilities Act</span></>,
+    title: <><span className="font-bold text-[#0b0f1a] text-[16px]">ADA</span>{" "}<span className="font-normal text-gray-500 text-[14px]">Americans with</span>{" "}<span className="font-bold text-[#0b0f1a] text-[16px]">Disabilities Act</span></>,
     desc: "Requires websites and apps of public and many private businesses to be accessible",
     cta: "Talk to an ADA expert",
   },
   {
+    showFlag: true,
+    borderColor: "#1e3a5f",
     badges: [{ text: "ADA", bg: "#1e3a5f", color: "#fff" }, { text: "Europe", bg: "transparent", color: "#1e3a5f", border: "#1e3a5f" }],
-    title: <span className="font-bold">Section 508</span>,
+    title: <span className="font-bold text-[#0b0f1a] text-[16px]">Section 508</span>,
     desc: "Mandates that federal government websites and digital content be accessible",
     cta: "Contact a 508 specialist",
   },
   {
+    showFlag: true,
+    borderColor: "#1e3a5f",
     badges: [{ text: "ADA", bg: "#1e3a5f", color: "#fff" }, { text: "Europe", bg: "transparent", color: "#1e3a5f", border: "#1e3a5f" }],
-    title: <>ACA <span className="font-normal text-gray-500 text-[14px]">Air Carrier Access</span> <span className="font-bold">Act</span></>,
+    title: <><span className="font-bold text-[#0b0f1a] text-[16px]">ACA</span>{" "}<span className="font-normal text-gray-500 text-[14px]">Air Carrier Access</span>{" "}<span className="font-bold text-[#0b0f1a] text-[16px]">Act</span></>,
     desc: "Requires all airline websites, apps, and Kiosks to be accessible to passengers with disabilities",
     cta: "Contact a 508 specialist",
   },
   {
+    showFlag: false,
+    borderColor: "#1e3a5f",
     badges: [{ text: "State Laws", bg: "#1e3a5f", color: "#fff" }, { text: "Varies by state", bg: "transparent", color: "#ea580c", border: "#ea580c" }],
-    title: <span className="font-bold">Section 508</span>,
+    title: <span className="font-bold text-[#0b0f1a] text-[16px]">Section 508</span>,
     desc: "Several states have their own digital accessibility requirements (e.g. California, New York, Colorado)",
     cta: "Find your state consultant",
   },
@@ -77,56 +86,94 @@ function ChatIcon() {
   );
 }
 
-type ScoreTier = { arcId: string; arcA: string; arcB: string; trackOpacity: string; numColor: string; label: string; badge: string; badgeBg: string; desc: string };
+function USFlagIcon() {
+  // 20×14px US flag with 13 stripes and blue canton with stars
+  const stripeH = 14 / 13;
+  const stripes = Array.from({ length: 13 }, (_, i) => i);
+  return (
+    <svg width="20" height="14" viewBox="0 0 20 14" style={{ borderRadius: 2, flexShrink: 0, display: "inline-block" }} aria-label="US flag">
+      {/* 13 alternating stripes */}
+      {stripes.map((i) => (
+        <rect key={i} x="0" y={i * stripeH} width="20" height={stripeH} fill={i % 2 === 0 ? "#B22234" : "#FFFFFF"} />
+      ))}
+      {/* Blue canton */}
+      <rect x="0" y="0" width="8" height={stripeH * 7} fill="#3C3B6E" />
+      {/* 9 small white stars (3×3 grid) in the canton */}
+      {[0,1,2].map((row) =>
+        [0,1,2].map((col) => (
+          <circle
+            key={`${row}-${col}`}
+            cx={1.3 + col * 2.7}
+            cy={1.2 + row * 2.0}
+            r="0.7"
+            fill="white"
+          />
+        ))
+      )}
+    </svg>
+  );
+}
 
-function getScoreTier(score: number): ScoreTier {
-  if (score >= 80) return {
-    arcId: "sgGreen", arcA: "#00d4aa", arcB: "#0088cc", trackOpacity: "rgba(255,255,255,0.1)",
-    numColor: "white", label: "Great job!", badge: "Excellent",
-    badgeBg: "linear-gradient(135deg, #00d4aa, #0088cc)",
-    desc: "Your site meets most accessibility standards, but there are still areas for improvement.",
-  };
-  if (score >= 50) return {
-    arcId: "sgYellow", arcA: "#fbbf24", arcB: "#f59e0b", trackOpacity: "rgba(251,191,36,0.15)",
-    numColor: "#fbbf24", label: "Needs improvement", badge: "Good",
-    badgeBg: "linear-gradient(135deg, #fbbf24, #f59e0b)",
-    desc: "Several accessibility issues need attention to reach compliance.",
-  };
-  return {
-    arcId: "sgRed", arcA: "#f87171", arcB: "#ef4444", trackOpacity: "rgba(239,68,68,0.15)",
-    numColor: "#f87171", label: "Non-compliant", badge: "Critical",
+type ScoreTier = { arcA: string; arcB: string; iconBg: string; label: string; badge: string; badgeBg: string; desc: string };
+
+function getScoreTier(hasCritical: boolean): ScoreTier {
+  if (hasCritical) return {
+    arcA: "#f87171", arcB: "#ef4444", iconBg: "rgba(239,68,68,0.15)",
+    label: "Non-compliant", badge: "Critical",
     badgeBg: "linear-gradient(135deg, #f87171, #ef4444)",
     desc: "Your website contains significant barriers that exclude many users.",
   };
+  return {
+    arcA: "#00d4aa", arcB: "#0088cc", iconBg: "rgba(0,212,170,0.15)",
+    label: "Great job!", badge: "Excellent",
+    badgeBg: "linear-gradient(135deg, #00d4aa, #0088cc)",
+    desc: "Your site meets most accessibility standards.",
+  };
 }
 
-function ScoreDisplay({ score }: { score: number }) {
-  const radius = 60, cx = 80, cy = 78;
-  const circumference = Math.PI * radius;
-  const progress = (score / 100) * circumference;
-  const t = getScoreTier(score);
+function ScoreDisplay({ hasCritical }: { hasCritical: boolean }) {
+  const t = getScoreTier(hasCritical);
 
   return (
     <div className="flex flex-col items-center w-full">
-      <svg width="160" height="95" viewBox="0 0 160 95">
-        <path d={`M ${cx - radius} ${cy} A ${radius} ${radius} 0 0 1 ${cx + radius} ${cy}`} stroke={t.trackOpacity} strokeWidth="10" fill="none" strokeLinecap="round" />
-        <path d={`M ${cx - radius} ${cy} A ${radius} ${radius} 0 0 1 ${cx + radius} ${cy}`} stroke={`url(#${t.arcId})`} strokeWidth="10" fill="none" strokeLinecap="round" strokeDasharray={`${progress} ${circumference}`} />
-        <defs>
-          <linearGradient id={t.arcId} x1="0" y1="0" x2="1" y2="0">
-            <stop stopColor={t.arcA} /><stop offset="1" stopColor={t.arcB} />
-          </linearGradient>
-        </defs>
-        <text x={cx} y={cy - 6} textAnchor="middle" fill={t.numColor} fontSize="24" fontWeight="700">{score}</text>
-        <text x={cx} y={cy + 13} textAnchor="middle" fill={t.numColor} fontSize="11" opacity="0.5">/ 100</text>
-      </svg>
-      <p className="text-white text-[18px] font-bold mt-1 mb-3">{t.label}</p>
+      {/* Inner card — gradient border for great job, plain dark for non-compliant */}
+      <div
+        className="w-full rounded-2xl p-[1.5px] mb-5"
+        style={{
+          background: hasCritical
+            ? "transparent"
+            : "linear-gradient(135deg, #00d4aa, #0088cc)",
+          border: hasCritical ? "1px solid rgba(248,113,113,0.2)" : "none",
+        }}
+      >
+        <div
+          className="w-full rounded-2xl flex flex-col items-center py-8 px-6"
+          style={{ background: "#0d1628" }}
+        >
+          {/* Icon image */}
+          <Image
+            src={hasCritical ? "/images/Frame 2147230107.png" : "/images/Frame 2147230108.png"}
+            alt={hasCritical ? "Non-compliant alert" : "Great job"}
+            width={100}
+            height={100}
+            className="w-[100px] h-[100px] object-contain mb-3"
+          />
+
+          {/* Label */}
+          <p className="text-white text-[20px] font-bold">{t.label}</p>
+        </div>
+      </div>
+
+      {/* Badge */}
       <span
-        className="text-white text-[13px] font-semibold px-5 py-1.5 rounded-full mb-3"
+        className="text-white text-[13px] font-semibold px-6 py-2 rounded-full mb-4"
         style={{ background: t.badgeBg }}
       >
         {t.badge}
       </span>
-      <p className="text-gray-400 text-[13px] text-center leading-relaxed max-w-[220px]">{t.desc}</p>
+
+      {/* Description */}
+      <p className="text-gray-400 text-[13px] text-center leading-relaxed max-w-[240px]">{t.desc}</p>
     </div>
   );
 }
@@ -146,7 +193,8 @@ function TrendDownIcon({ color }: { color: string }) {
 }
 
 export default function ScanResults({ results, onRescan }: ScanResultsProps) {
-  const { url, scannedAt, score, violations, passes } = results;
+  const { url, scannedAt, violations, passes } = results;
+  const hasCritical = violations.some((v) => v.impact === "critical");
 
   const formattedDate = new Date(scannedAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
   const formattedTime = new Date(scannedAt).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" });
@@ -182,21 +230,12 @@ export default function ScanResults({ results, onRescan }: ScanResultsProps) {
           {/* Two-column cards */}
           <div className="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto mb-8">
 
-            {/* Left card — unified, color driven by score tier */}
+            {/* Left card — unified, color driven by hasCritical */}
             {(() => {
-              const t = getScoreTier(score);
-              // Convert hex arcA to rgba for card backgrounds
-              const cardBg = score >= 80
-                ? "rgba(0,212,170,0.08)"
-                : score >= 50
-                ? "rgba(251,191,36,0.08)"
-                : "rgba(239,68,68,0.08)";
-              const cardBorder = score >= 80
-                ? "1px solid rgba(0,212,170,0.3)"
-                : score >= 50
-                ? "1px solid rgba(251,191,36,0.3)"
-                : "1px solid rgba(239,68,68,0.3)";
-              const btnLabel = score >= 80 ? "I want to be inclusive" : score >= 50 ? "I want to be inclusive" : "Solve the issue →";
+              const t = getScoreTier(hasCritical);
+              const cardBg = hasCritical ? "rgba(239,68,68,0.08)" : "rgba(0,212,170,0.08)";
+              const cardBorder = hasCritical ? "1px solid rgba(239,68,68,0.3)" : "1px solid rgba(0,212,170,0.3)";
+              const btnLabel = hasCritical ? "Solve the issue →" : "I want to be inclusive";
 
               return (
                 <div className="rounded-2xl p-6 border border-white/10" style={{ background: "#0d1120" }}>
@@ -243,26 +282,13 @@ export default function ScanResults({ results, onRescan }: ScanResultsProps) {
               );
             })()}
 
-            {/* Right card — score */}
+            {/* Right card — status */}
             <div className="rounded-2xl p-6 border border-white/10 flex flex-col items-center justify-center" style={{ background: "#0d1120" }}>
-              <h3 className="text-white text-[15px] font-semibold mb-4">Your Accessibility Score</h3>
-              <ScoreDisplay score={score} />
+              <h3 className="text-white text-[15px] font-semibold mb-6">Your Accessibility Score</h3>
+              <ScoreDisplay hasCritical={hasCritical} />
             </div>
           </div>
 
-          <div className="flex justify-center">
-            <button
-              onClick={onRescan}
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white text-[14px] font-semibold hover:opacity-90 transition-opacity"
-              style={{ background: "linear-gradient(135deg, #00d4aa, #0088cc)" }}
-            >
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <rect x="1" y="1" width="12" height="10" rx="1.5" stroke="white" strokeWidth="1.2" fill="none" />
-                <path d="M4 6h6M4 8.5h3" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-              </svg>
-              Book a free demo →
-            </button>
-          </div>
         </div>
       </section>
 
@@ -348,12 +374,13 @@ export default function ScanResults({ results, onRescan }: ScanResultsProps) {
               {LAWS.map((law, i) => (
                 <div
                   key={i}
-                  className="rounded-xl p-5"
-                  style={{ background: "#eff6ff" }}
+                  className="rounded-xl overflow-hidden"
+                  style={{ background: "#eff6ff", border: "1px solid #e5e7eb", borderLeft: `4px solid ${law.borderColor}` }}
                 >
+                  <div className="p-5">
                   {/* Flag + badges */}
                   <div className="flex items-center gap-2 mb-3 flex-wrap">
-                    <span className="text-lg">🇺🇸</span>
+                    {law.showFlag && <USFlagIcon />}
                     {law.badges.map((b, bi) => (
                       <span
                         key={bi}
@@ -380,6 +407,7 @@ export default function ScanResults({ results, onRescan }: ScanResultsProps) {
                     <ChatIcon />
                     {law.cta}
                   </button>
+                  </div>
                 </div>
               ))}
             </div>

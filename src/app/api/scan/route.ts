@@ -99,15 +99,15 @@ export async function POST(request: NextRequest) {
       url,
       scannedAt: new Date().toISOString(),
       score,
-      violations: results.violations.map((v) => ({
-        id: v.id,
-        description: v.description,
-        help: v.help,
-        helpUrl: v.helpUrl,
-        impact: v.impact,
-        nodes: v.nodes.slice(0, 3).map((n) => ({
-          html: n.html,
-          target: n.target,
+      violations: (results.violations || []).map((v) => ({
+        id: v.id ?? "",
+        description: v.description ?? "",
+        help: v.help ?? "",
+        helpUrl: v.helpUrl ?? "",
+        impact: v.impact ?? "minor",
+        nodes: (v.nodes ?? []).slice(0, 3).map((n) => ({
+          html: n.html ?? "",
+          target: n.target ?? [],
         })),
       })),
       passes: results.passes.length,
@@ -115,8 +115,20 @@ export async function POST(request: NextRequest) {
     });
   } catch (err) {
     console.error("Scan error:", err);
-    const message = err instanceof Error ? err.message : "Scan failed";
-    return NextResponse.json({ error: message }, { status: 500 });
+    const raw = err instanceof Error ? err.message : String(err);
+
+    let friendly: string;
+    if (/TimeoutError|timeout|net::ERR_/i.test(raw)) {
+      friendly = "This website could not be reached. Please check the URL and try again.";
+    } else if (/Navigation|net::ERR_NAME_NOT_RESOLVED|ERR_CONNECTION/i.test(raw)) {
+      friendly = "This website could not be found. Please check the URL and try again.";
+    } else if (/toLowerCase|Cannot read prop|undefined/i.test(raw)) {
+      friendly = "This website could not be scanned. It may be blocking automated access. Please try a different URL.";
+    } else {
+      friendly = "This website could not be scanned. Please try again or enter a different URL.";
+    }
+
+    return NextResponse.json({ error: friendly }, { status: 500 });
   } finally {
     if (browser) {
       await browser.close();

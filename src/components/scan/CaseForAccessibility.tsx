@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import ScrollReveal from "../ScrollReveal";
 
@@ -95,15 +94,29 @@ const CaseForAccessibility = () => {
                 </p>
               </div>
 
-              {/* Card 4 — Dark image */}
-              <div className="rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/Frame 2147230078.png"
-                  alt="Accessibility visual"
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover"
-                />
+              {/* Card 4 — ADA Lawsuit Risk */}
+              <div
+                className="rounded-2xl p-6 border border-gray-100 flex flex-col overflow-hidden lg:overflow-visible"
+                style={{ background: "#f4f6f9" }}
+              >
+                <div className="text-[#0b0f1a] text-[22px] font-bold leading-tight mb-3">
+                  $3+ Billion<br />ADA Lawsuit Risk
+                </div>
+                {/* Bottom row: text left, image right — never overlap */}
+                <div className="flex items-end justify-between gap-2 mt-auto">
+                  <p className="text-gray-500 text-sm leading-relaxed flex-1 min-w-0">
+                    Thousands of ADA accessibility lawsuits are filed against websites every year.
+                  </p>
+                  <div className="flex-shrink-0 w-[38%] lg:w-[46%] lg:-mr-[42px] pointer-events-none select-none">
+                    <Image
+                      src="/images/law.png"
+                      alt="Gavel"
+                      width={220}
+                      height={180}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
               </div>
 
             </div>
