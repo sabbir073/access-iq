@@ -19,14 +19,12 @@ interface AxeResults {
   incomplete: Array<unknown>;
 }
 
-function calculateScore(violations: AxeViolation[]): number {
-  const criticalCount = violations.filter((v) => v.impact === "critical").length;
-  const seriousCount = violations.filter((v) => v.impact === "serious").length;
-  const moderateCount = violations.filter((v) => v.impact === "moderate").length;
-  const minorCount = violations.filter((v) => v.impact === "minor").length;
-
-  const penalty = criticalCount * 15 + seriousCount * 8 + moderateCount * 4 + minorCount * 2;
-  return Math.max(0, 100 - penalty);
+function countByImpact(violations: AxeViolation[]) {
+  const critical = violations.filter((v) => v.impact === "critical").length;
+  const serious = violations.filter((v) => v.impact === "serious").length;
+  const moderate = violations.filter((v) => v.impact === "moderate").length;
+  const minor = violations.filter((v) => v.impact === "minor").length;
+  return { critical, serious, moderate, minor, total: critical + serious + moderate + minor };
 }
 
 export async function POST(request: NextRequest) {
@@ -93,12 +91,12 @@ export async function POST(request: NextRequest) {
       return (window as any).axe.run();
     });
 
-    const score = calculateScore(results.violations);
+    const counts = countByImpact(results.violations);
 
     return NextResponse.json({
       url,
       scannedAt: new Date().toISOString(),
-      score,
+      counts,
       violations: (results.violations || []).map((v) => ({
         id: v.id ?? "",
         description: v.description ?? "",

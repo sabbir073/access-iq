@@ -23,11 +23,11 @@ const ScanningView = ({ url }: ScanningViewProps) => {
   const pausedRef = useRef(false);
   const progressRef = useRef<HTMLDivElement>(null);
 
-  // Timer
+  // Timer — updates every ~50ms for live millisecond display
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!pausedRef.current) setElapsed((s) => s + 1);
-    }, 1000);
+      if (!pausedRef.current) setElapsed((s) => s + 50);
+    }, 50);
     return () => clearInterval(interval);
   }, []);
 
@@ -51,11 +51,13 @@ const ScanningView = ({ url }: ScanningViewProps) => {
     return () => clearTimeout(t);
   }, []);
 
-  const formatTime = (s: number) => {
-    const h = Math.floor(s / 3600).toString().padStart(2, "0");
-    const m = Math.floor((s % 3600) / 60).toString().padStart(2, "0");
-    const sec = (s % 60).toString().padStart(2, "0");
-    return `${h}:${m}:${sec}`;
+  // Format as MM:SS:MS (elapsed is in milliseconds)
+  const formatTime = (ms: number) => {
+    const totalSec = Math.floor(ms / 1000);
+    const m = Math.floor(totalSec / 60).toString().padStart(2, "0");
+    const s = (totalSec % 60).toString().padStart(2, "0");
+    const millis = (ms % 1000).toString().padStart(3, "0");
+    return `${m}:${s}:${millis}`;
   };
 
   return (

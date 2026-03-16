@@ -110,9 +110,9 @@ const ScanHero = ({ onScan, error }: ScanHeroProps) => {
                   filter: "blur(14px)",
                 }}
               />
-              {/* Input + button container */}
+              {/* Input + button container — stacks on mobile */}
               <div
-                className="relative z-10 flex items-center rounded-full"
+                className="relative z-10 flex flex-col sm:flex-row sm:items-center rounded-2xl sm:rounded-full"
                 style={{
                   background: "rgba(8, 12, 24, 0.88)",
                   border: displayError ? "1px solid rgba(239,68,68,0.6)" : "1px solid rgba(255,255,255,0.12)",
@@ -127,16 +127,22 @@ const ScanHero = ({ onScan, error }: ScanHeroProps) => {
                     if (validationError) setValidationError("");
                   }}
                   onKeyDown={handleKeyDown}
-                  placeholder="Enter your website"
+                  placeholder="Enter your website URL"
                   className="flex-1 min-w-0 px-7 py-4 bg-transparent text-white text-[14px] outline-none placeholder-gray-500"
                 />
                 <div className="p-2 flex-shrink-0">
                   <button
                     onClick={validateAndSubmit}
-                    className="text-white text-[14px] font-semibold px-7 py-3 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+                    className="w-full sm:w-auto text-white text-[14px] font-semibold px-7 py-3 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap flex items-center justify-center gap-2"
                     style={{ background: "linear-gradient(135deg, #00d4aa, #0088cc)" }}
                   >
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M7 1v4M7 9v4M1 7h4M9 7h4" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
                     Start Free Scan
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M2 6h8M7 3l3 3-3 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </button>
                 </div>
               </div>

@@ -20,10 +20,18 @@ interface Violation {
   nodes: Array<{ html: string; target: string[] }>;
 }
 
+interface ImpactCounts {
+  critical: number;
+  serious: number;
+  moderate: number;
+  minor: number;
+  total: number;
+}
+
 interface ScanResultsData {
   url: string;
   scannedAt: string;
-  score: number;
+  counts: ImpactCounts;
   violations: Violation[];
   passes: number;
   incomplete: number;
