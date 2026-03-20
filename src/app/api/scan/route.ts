@@ -20,10 +20,16 @@ interface AxeResults {
 }
 
 function countByImpact(violations: AxeViolation[]) {
-  const critical = violations.filter((v) => v.impact === "critical").length;
-  const serious = violations.filter((v) => v.impact === "serious").length;
-  const moderate = violations.filter((v) => v.impact === "moderate").length;
-  const minor = violations.filter((v) => v.impact === "minor").length;
+  let critical = 0, serious = 0, moderate = 0, minor = 0;
+  for (const v of violations) {
+    const nodeCount = v.nodes.length;
+    switch (v.impact) {
+      case "critical": critical += nodeCount; break;
+      case "serious":  serious  += nodeCount; break;
+      case "moderate": moderate += nodeCount; break;
+      case "minor":    minor    += nodeCount; break;
+    }
+  }
   return { critical, serious, moderate, minor, total: critical + serious + moderate + minor };
 }
 
